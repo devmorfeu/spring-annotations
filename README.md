@@ -4,12 +4,12 @@ _Este documento descreve várias anotações disponíveis no Spring Framework, o
 
 ## Índice
 
-- [Spring Boot 3.1.4](#Spring-boot 3.1.4)
+- [Spring Boot 3.1.4](#spring-boot)
 - [Spring Data JPA](#spring-data-jpa)
 - [Spring Security](#spring-security)
 - ...
 
-## Spring-boot 3.1.4
+## Spring-boot
 
 <span style="color:yellow"><strong>@ConfigurationProperties</strong></span> : _Mapeia propriedades de configuração definidas em arquivos de propriedades ou YAML para objetos Java._
 
