@@ -129,8 +129,6 @@ ${\color{yellow}@SpringBootConfiguration}$ : _É uma anotação do Spring Boot u
 
 - `proxyBeanMethods`: _Sinalizador que controla se os métodos de bean devem ser proxy por CGLIB. Por padrão, ele é definido como true. Se definido como false, os métodos de bean não serão proxy._
 
-==========================================================================================================
-
 ${\color{yellow}@AutoConfiguration}$ : _É uma anotação do Spring Boot que permite configurar explicitamente o nome do bean associado a uma classe de autoconfiguração e especificar classes que devem ser aplicadas antes ou depois dela. Isso ajuda a controlar a ordem de configuração automática no contexto do aplicativo._
 
 **Parâmetros:**
@@ -140,7 +138,6 @@ ${\color{yellow}@AutoConfiguration}$ : _É uma anotação do Spring Boot que per
 - `beforeName`: _Define os nomes das classes de autoconfiguração que ainda não devem ser aplicadas antes da classe **@AutoConfiguration**._
 - `after`: _Especifica as classes de autoconfiguração que já devem ter sido aplicadas antes da classe **@AutoConfiguration**._
 - `afterName`: _Define os nomes das classes de autoconfiguração que já devem ter sido aplicadas antes da classe **@AutoConfiguration**._
-
 
 ${\color{yellow}@AutoConfigurationPackage}$ : _É uma anotação do Spring Boot que escaneia e registra automaticamente pacotes para configuração automática no contexto do aplicativo. Ela identifica o pacote da classe anotada e escaneia outros pacotes a partir dele._
 
