@@ -5,9 +5,7 @@ _Este documento descreve várias anotações disponíveis no Spring Framework, o
 ## Índice
 
 - [Spring Boot 3.1.4](#spring-boot)
-- [Spring Data JPA](#spring-data-jpa)
-- [Spring Security](#spring-security)
-- ...
+- [Spring Cloud AWS 3.0.2](#spring-cloud-aws)
 
 ## Spring-boot
 
@@ -307,3 +305,7 @@ ${\color{yellow}@SpringBootConfiguration}$ : _@SpringBootConfiguration é uma an
 **Parâmetros:**
 
 - `proxyBeanMethods`: _Sinalizador que controla se os métodos de bean devem ser proxy por CGLIB. Por padrão, ele é definido como true. Se definido como false, os métodos de bean não serão proxy._
+
+## Spring-cloud-aws
+
+**EM BREVE**
