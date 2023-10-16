@@ -50,7 +50,7 @@ ${\color{yellow}@ AutoConfigurationPackage}$ : _@AutoConfigurationPackage é uma
 
 ${\color{yellow}@BatchDataSource}$ : _@BatchDataSource é uma anotação do Spring Boot usada para configurar um **DataSource** específico para o processamento de lotes em aplicações Spring Batch, permitindo o isolamento dos recursos de banco de dados para tarefas de lote._
 
-${\color{yellow}@ConditionalOnBean}$ : _É uma anotação do Spring Boot que condiciona a ativação de um componente somente se um determinado bean estiver presente no contexto da aplicação. Isso permite controlar a inicialização de componentes com base na existência de outros beans._
+${\color{yellow}@ConditionalOnBean}$ : _@ConditionalOnBean é uma anotação do Spring Boot que condiciona a ativação de um componente somente se um determinado bean estiver presente no contexto da aplicação. Isso permite controlar a inicialização de componentes com base na existência de outros beans._
 
 **Parâmetros:**
 
@@ -61,14 +61,14 @@ ${\color{yellow}@ConditionalOnBean}$ : _É uma anotação do Spring Boot que con
 - `search`: _Define a estratégia de pesquisa para determinar se o contexto de aplicação hierárquico (contextos pai) deve ser considerado._
 - `parameterizedContainer`: _Especifica classes adicionais que podem conter tipos de beans específicos em seus parâmetros genéricos._
 
-${\color{yellow}@ConditionalOnClass}$ : _É uma anotação do Spring Boot que condiciona a ativação de um componente somente se uma ou mais classes especificadas estiverem presentes no classpath da aplicação. Isso permite controlar a inicialização de componentes com base na disponibilidade de classes._
+${\color{yellow}@ConditionalOnClass}$ : _@ConditionalOnClass é uma anotação do Spring Boot que condiciona a ativação de um componente somente se uma ou mais classes especificadas estiverem presentes no classpath da aplicação. Isso permite controlar a inicialização de componentes com base na disponibilidade de classes._
 
 **Parâmetros:**
 
 - `value`: _Especifica as classes cuja presença no classpath é necessária para ativar a condição._
 - `name`: _Especifica os nomes de classes cuja presença no classpath é necessária._
 
-${\color{yellow}@ConditionalOnCloudPlatform}$ : _É uma anotação do Spring Boot que condiciona a ativação de um componente com base na plataforma em nuvem especificada, permitindo configurar componentes para diferentes ambientes de nuvem, como AWS, Google Cloud ou Azure._
+${\color{yellow}@ConditionalOnCloudPlatform}$ : _@ConditionalOnCloudPlatform é uma anotação do Spring Boot que condiciona a ativação de um componente com base na plataforma em nuvem especificada, permitindo configurar componentes para diferentes ambientes de nuvem, como AWS, Google Cloud ou Azure._
 
 **Parâmetros:**
 
@@ -78,7 +78,7 @@ ${\color{yellow}@ConditionalOnDefaultWebSecurity}$ : _@ConditionalOnDefaultWebSe
 
 ${\color{yellow}@ConditionalOnEnabledResourceChain}$ : _@ConditionalOnEnabledResourceChain é uma anotação de condição usada no Spring Boot para verificar se a cadeia de recursos (Resource Chain) está habilitada na aplicação, permitindo a personalização de recursos, como arquivos estáticos e cache, em aplicativos da web. Isso permite a configuração avançada de recursos, como otimização de cache e versão de recursos._
 
-${\color{yellow}@ConditionalOnExpression}$ : _É uma anotação do Spring Boot que condiciona a ativação de um componente com base em uma expressão SpEL (Spring Expression Language) avaliada em tempo de execução, permitindo ativar componentes com base em regras lógicas definidas na expressão._
+${\color{yellow}@ConditionalOnExpression}$ : _@ConditionalOnExpression é uma anotação do Spring Boot que condiciona a ativação de um componente com base em uma expressão SpEL (Spring Expression Language) avaliada em tempo de execução, permitindo ativar componentes com base em regras lógicas definidas na expressão._
 
 **Parâmetros:**
 
@@ -86,20 +86,20 @@ ${\color{yellow}@ConditionalOnExpression}$ : _É uma anotação do Spring Boot q
 
 ${\color{yellow}@ConditionalOnGraphQLSchema}$ : _@ConditionalOnGraphQLSchema é uma anotação no Spring Boot que permite condicionar o carregamento de configurações com base na presença de um esquema GraphQL na aplicação, garantindo que as configurações sejam aplicadas somente quando o esquema estiver disponível._
 
-${\color{yellow}@ConditionalOnJava}$ : _É uma anotação do Spring Boot que condiciona a ativação de um componente com base na versão da plataforma Java, permitindo que os componentes sejam ativados apenas quando a versão Java especificada estiver presente._
+${\color{yellow}@ConditionalOnJava}$ : _@ConditionalOnJava é uma anotação do Spring Boot que condiciona a ativação de um componente com base na versão da plataforma Java, permitindo que os componentes sejam ativados apenas quando a versão Java especificada estiver presente._
 
 **Parâmetros:**
 
 - `range`: _Configura se o valor especificado em **value()** é considerado um limite superior exclusivo ou um limite inferior inclusivo. O padrão é **Range.EQUAL_OR_NEWER** (igual ou mais recente)._
 - `value`: _Especifica a versão da plataforma Java a ser verificada._
 
-${\color{yellow}@ConditionalOnJndi}$ : _É uma anotação do Spring Boot que condiciona a ativação de um componente com base na disponibilidade de um recurso JNDI (Java Naming and Directory Interface), permitindo que componentes sejam ativados apenas quando o recurso JNDI especificado estiver disponível._
+${\color{yellow}@ConditionalOnJndi}$ : _@ConditionalOnJndi é uma anotação do Spring Boot que condiciona a ativação de um componente com base na disponibilidade de um recurso JNDI (Java Naming and Directory Interface), permitindo que componentes sejam ativados apenas quando o recurso JNDI especificado estiver disponível._
 
 **Parâmetros:**
 
 - `value`: _Especifica os locais JNDI em que pelo menos um deve existir para ativar a condição. Se nenhum local for especificado, a condição será ativada apenas com base na presença de um **InitialContext**._
 
-${\color{yellow}@ConditionalOnMissingBean}$ : _É uma anotação do Spring Boot que condiciona a ativação de um componente somente se não houver uma instância de bean do mesmo tipo já definida no contexto, permitindo substituir beans padrão com implementações personalizadas._
+${\color{yellow}@ConditionalOnMissingBean}$ : _@ConditionalOnMissingBean é uma anotação do Spring Boot que condiciona a ativação de um componente somente se não houver uma instância de bean do mesmo tipo já definida no contexto, permitindo substituir beans padrão com implementações personalizadas._
 
 **Parâmetros:**
 
@@ -161,7 +161,7 @@ ${\color{yellow}@ConditionalOnWebApplication}$ : _@ConditionalOnWebApplication �
 
 - `type`: _Define o tipo de aplicação web, sendo **ANY** , **SERVLET** ou **REACTIVE**._
 
-${\color{yellow}@ConfigurationProperties}$ : _Mapeia propriedades de configuração definidas em arquivos de propriedades ou YAML para objetos Java._
+${\color{yellow}@ConfigurationProperties}$ : _@ConfigurationProperties mapeia propriedades de configuração definidas em arquivos de propriedades ou YAML para objetos Java._
 
 **Parâmetros:**
 
@@ -169,58 +169,58 @@ ${\color{yellow}@ConfigurationProperties}$ : _Mapeia propriedades de configuraç
 - `ignoreInvalidFields`: Sinalizador para indicar que, ao vincular a este objeto, campos inválidos devem ser ignorados.
 - `ignoreUnknownFields`: Sinalizador para indicar que, ao vincular a este objeto, campos desconhecidos devem ser ignorados.
 
-${\color{yellow}@ConfigurationPropertiesBinding}$ : _É uma anotação do Spring Boot usada para criar conversores personalizados para propriedades de configuração._
+${\color{yellow}@ConfigurationPropertiesBinding}$ : _@ConfigurationPropertiesBinding é uma anotação do Spring Boot usada para criar conversores personalizados para propriedades de configuração._
 
-${\color{yellow}@ConfigurationPropertiesScan}$ : _É uma anotação do Spring Boot usada para escanear pacotes em busca de classes de propriedades de configuração._
+${\color{yellow}@ConfigurationPropertiesScan}$ : _@ConfigurationPropertiesScan é uma anotação do Spring Boot usada para escanear pacotes em busca de classes de propriedades de configuração._
 
 **Parâmetros:**
 
 - `basePackages`: _Path de pacotes do projeto para verificar propriedades de configuração._
 - `basePackageClasses`: _Alternativa ("Type-safe") especificando os pacotes para verificar as propriedades de configuração. O pacote de cada classe especificada será verificado._
 
-${\color{yellow}@ConstructorBinding}$ : _É uma anotação do Spring Boot que indica a vinculação de propriedades de configuração a construtores, facilitando a criação de objetos imutáveis._
+${\color{yellow}@ConstructorBinding}$ : _@ConstructorBinding é uma anotação do Spring Boot que indica a vinculação de propriedades de configuração a construtores, facilitando a criação de objetos imutáveis._
 
-${\color{yellow}@DefaultValue}$ : _É uma anotação do Spring Boot que pode ser usada para especificar o valor padrão ao vincular a uma propriedade imutável. Essa anotação também pode ser usada com propriedades aninhadas para indicar que um valor deve sempre ser vinculado (em vez de vincular nulo). O valor desta anotação só será utilizado se a propriedade não for encontrada nas fontes de propriedades utilizadas pelo **Binder**._
+${\color{yellow}@DefaultValue}$ : _@DefaultValue é uma anotação do Spring Boot que pode ser usada para especificar o valor padrão ao vincular a uma propriedade imutável. Essa anotação também pode ser usada com propriedades aninhadas para indicar que um valor deve sempre ser vinculado (em vez de vincular nulo). O valor desta anotação só será utilizado se a propriedade não for encontrada nas fontes de propriedades utilizadas pelo **Binder**._
 
 **Parâmetros:**
 
 - `value`: _O valor padrão da propriedade. Pode ser uma matriz de valores para propriedades de coleção ou baseadas em matriz._
 
-${\color{yellow}@DataSizeUnit}$ : _É uma anotação do Spring Boot que pode ser usada para alterar a unidade padrão usada ao converter um DataSize._
+${\color{yellow}@DataSizeUnit}$ : _@DataSizeUnit é uma anotação do Spring Boot que pode ser usada para alterar a unidade padrão usada ao converter um DataSize._
 
 **Parâmetros:**
 
 - `value`: _O **DataUnit** a ser usado se nenhum for especificado._
 
-${\color{yellow}@DeprecatedConfigurationProperty}$ : _É uma anotação do Spring Boot usada para marcar propriedades de configuração como obsoletas e fornecer uma mensagem de aviso quando são usadas._
+${\color{yellow}@DeprecatedConfigurationProperty}$ : _@DeprecatedConfigurationProperty é uma anotação do Spring Boot usada para marcar propriedades de configuração como obsoletas e fornecer uma mensagem de aviso quando são usadas._
 
 **Parâmetros:**
 
 - `reason`: _O motivo da descontinuação._
 - `replacement`: _O valor que deve ser usado (se houver)._
 
-${\color{yellow}@DependsOnDatabaseInitialization}$ : _É uma anotação do Spring Boot que define que um bean depende da inicialização do banco de dados, garantindo que a inicialização do banco de dados seja concluída antes do bean ser criado._
+${\color{yellow}@DependsOnDatabaseInitialization}$ : _@DependsOnDatabaseInitialization é uma anotação do Spring Boot que define que um bean depende da inicialização do banco de dados, garantindo que a inicialização do banco de dados seja concluída antes do bean ser criado._
 
-${\color{yellow}@Delimiter}$ : _É uma anotação do Spring Boot que permite definir um delimitador personalizado para valores de propriedades de configuração, especialmente útil ao lidar com listas em propriedades._
+${\color{yellow}@Delimiter}$ : _@Delimiter é uma anotação do Spring Boot que permite definir um delimitador personalizado para valores de propriedades de configuração, especialmente útil ao lidar com listas em propriedades._
 
 **Parâmetros:**
 
 - `value`: _O delimitador a ser usado ou **NONE** se todo o conteúdo precisar ser tratado como um único elemento._
 
-${\color{yellow}@DurationFormat}$ : _É uma anotação do Spring Boot que permite personalizar o formato de durações, como as usadas em propriedades de configuração, para facilitar a leitura e escrita._
+${\color{yellow}@DurationFormat}$ : _@DurationFormat é uma anotação do Spring Boot que permite personalizar o formato de durações, como as usadas em propriedades de configuração, para facilitar a leitura e escrita._
 
 **Parâmetros:**
 
 - `value`: _O estilo do formato de duração._
 
-${\color{yellow}@EnableAutoConfiguration}$ : _É uma anotação do Spring Boot que ativa a configuração automática, permitindo que o Spring Boot configure automaticamente o aplicativo com base nas dependências e no ambiente._
+${\color{yellow}@EnableAutoConfiguration}$ : _@EnableAutoConfiguration é uma anotação do Spring Boot que ativa a configuração automática, permitindo que o Spring Boot configure automaticamente o aplicativo com base nas dependências e no ambiente._
 
 **Parâmetros:**
 
 - `exclude`: _Especifica classes de configuração automática a serem excluídas._
 - `excludeName`: _Especifica nomes de classes de configuração automática a serem excluídos. (Adicionado na versão 1.3.0)._
 
-${\color{yellow}@EnableConfigurationProperties}$ : _É uma anotação do Spring Boot usada para habilitar a vinculação automática de propriedades de configuração a classes de configuração._
+${\color{yellow}@EnableConfigurationProperties}$ : _@EnableConfigurationProperties é uma anotação do Spring Boot usada para habilitar a vinculação automática de propriedades de configuração a classes de configuração._
 
 **Parâmetros:**
 
@@ -235,14 +235,14 @@ ${\color{yellow}@EntityScan}$ : _@EntityScan é uma anotação usada no Spring p
 
 ${\color{yellow}@FlywayDataSource}$ : _@FlywayDataSource é uma anotação no Spring Boot que permite configurar um data source separado exclusivamente para o Flyway, uma ferramenta de migração de banco de dados. Isso é útil para separar a fonte de dados usada para migrações de banco de dados da fonte de dados principal da aplicação._
 
-${\color{yellow}@ImportAutoConfiguration}$ : _É uma anotação do Spring Boot que permite importar classes de configuração automática personalizada para o aplicativo Spring Boot, estendendo as configurações padrão._
+${\color{yellow}@ImportAutoConfiguration}$ : _@ImportAutoConfiguration é uma anotação do Spring Boot que permite importar classes de configuração automática personalizada para o aplicativo Spring Boot, estendendo as configurações padrão._
 
 **Parâmetros:**
 
 - `value / classes`: _Especifica classes de configuração automática personalizada a serem importadas. Pode ser definido diretamente ou por meio de um arquivo no **META-INF/spring** que lista as classes a serem importadas._
 - `exclude`: _Especifica classes de configuração automática a serem excluídas, garantindo que não sejam aplicadas._
 
-${\color{yellow}@JsonComponent}$ : _É uma anotação do Spring Boot usada para registrar um componente como um manipulador de serialização e desserialização JSON, permitindo personalizar a forma como objetos são convertidos para JSON e vice-versa._
+${\color{yellow}@JsonComponent}$ : _@JsonComponent é uma anotação do Spring Boot usada para registrar um componente como um manipulador de serialização e desserialização JSON, permitindo personalizar a forma como objetos são convertidos para JSON e vice-versa._
 
 **Parâmetros:**
 
@@ -250,7 +250,7 @@ ${\color{yellow}@JsonComponent}$ : _É uma anotação do Spring Boot usada para 
 - `type`: _Define os tipos que o componente manipula para serialização/desserialização. Essa configuração é especialmente importante para deserializadores de chaves (**KeyDeserializer**) e pode ser usada para limitar o tratamento a subclasses de tipos inferidos._
 - `scope`: _Especifica o escopo sob o qual o serializador/desserializador deve ser registrado com o módulo. O valor padrão é **Scope.VALUES**, que se aplica a serializadores/desserializadores de conteúdo de valor. O escopo **Scope.KEYS** pode ser usado para serializadores/desserializadores de chaves._
 
-${\color{yellow}@JsonMixin}$ : _É uma anotação que permite criar uma classe que define anotações personalizadas para controlar a forma como objetos são convertidos em JSON ou de JSON para objetos, aplicando essas anotações a classes específicas. Isso facilita a personalização da serialização e desserialização JSON._
+${\color{yellow}@JsonMixin}$ : _@JsonMixin é uma anotação que permite criar uma classe que define anotações personalizadas para controlar a forma como objetos são convertidos em JSON ou de JSON para objetos, aplicando essas anotações a classes específicas. Isso facilita a personalização da serialização e desserialização JSON._
 
 **Parâmetros:**
 
@@ -258,23 +258,23 @@ ${\color{yellow}@JsonMixin}$ : _É uma anotação que permite criar uma classe q
 
 ${\color{yellow}@LiquibaseDataSource}$ : _@LiquibaseDataSource é uma anotação usada no Spring Boot para configurar um DataSource específico para o Liquibase, uma ferramenta de controle de versionamento de banco de dados. Isso permite que você defina um DataSource separado para as migrações do Liquibase em relação ao DataSource principal da aplicação._
 
-${\color{yellow}@Name}$ : _É uma anotação do Spring Boot que pode ser usada para especificar o nome ao vincular a uma propriedade imutável._
+${\color{yellow}@Name}$ : _@Name é uma anotação do Spring Boot que pode ser usada para especificar o nome ao vincular a uma propriedade imutável._
 
 **Parâmetros:**
 
 - `value`: _O nome da propriedade a ser usada para associação._
 
-${\color{yellow}@Nested}$ : _É uma meta-anotação do Spring Boot que deve ser adicionada às anotações que indicam que um campo é do tipo aninhado. Usado para garantir que as dicas de reflexão corretas sejam registradas._
+${\color{yellow}@Nested}$ : _@Nested é uma meta-anotação do Spring Boot que deve ser adicionada às anotações que indicam que um campo é do tipo aninhado. Usado para garantir que as dicas de reflexão corretas sejam registradas._
 
-${\color{yellow}@NestedConfigurationProperty}$ : _É uma anotação do Spring Boot usada para indicar que uma propriedade de configuração complexa está aninhada dentro de outra propriedade de configuração._
+${\color{yellow}@NestedConfigurationProperty}$ : _@NestedConfigurationProperty é uma anotação do Spring Boot usada para indicar que uma propriedade de configuração complexa está aninhada dentro de outra propriedade de configuração._
 
-${\color{yellow}@PeriodFormat}$ : _É uma anotação do Spring Boot que permite personalizar o formato de períodos, como os usados em propriedades de configuração, para facilitar a leitura e escrita._
+${\color{yellow}@PeriodFormat}$ : _@PeriodFormat é uma anotação do Spring Boot que permite personalizar o formato de períodos, como os usados em propriedades de configuração, para facilitar a leitura e escrita._
 
 **Parâmetros:**
 
 - `value`: _O estilo de formato do período._
 
-${\color{yellow}@PeriodUnit}$ : _É uma anotação do Spring Boot que permite definir a unidade padrão para valores de período em propriedades de configuração, simplificando a configuração._
+${\color{yellow}@PeriodUnit}$ : _@PeriodUnit é uma anotação do Spring Boot que permite definir a unidade padrão para valores de período em propriedades de configuração, simplificando a configuração._
 
 **Parâmetros:**
 
@@ -284,14 +284,14 @@ ${\color{yellow}@QuartzDataSource}$ : _@QuartzDataSource anotação de um DataSo
 
 ${\color{yellow}@QuartzTransactionManager}$ : _@QuartzTransactionManager anotação de TransactionManager a ser injetado na configuração automática do Quartz. Pode ser utilizado em um gerenciador de transações secundário, caso exista outro marcado como @Primary._
 
-${\color{yellow}@ServletComponentScan}$ : _É uma anotação do Spring Boot usada para escanear pacotes em busca de classes Servlet, Filter e Listener para configuração automática no contexto do aplicativo web._
+${\color{yellow}@ServletComponentScan}$ : _@ServletComponentScan é uma anotação do Spring Boot usada para escanear pacotes em busca de classes Servlet, Filter e Listener para configuração automática no contexto do aplicativo web._
 
 **Parâmetros:**
 
 - `basePackages`: _Path de pacotes do projeto para verificar propriedades de configuração._
 - `basePackageClasses`: _Alternativa ("Type-safe") especificando os pacotes para verificar as propriedades de configuração. O pacote de cada classe especificada será verificado._
 
-${\color{yellow}@SpringBootApplication}$ : _essa anotação diz ao Spring Boot que essa classe deverá ser usada como base para configurar toda nossa aplicação._
+${\color{yellow}@SpringBootApplication}$ : _@SpringBootApplication diz ao Spring Boot que essa classe deverá ser usada como base para configurar toda nossa aplicação._
 
 **Parâmetros:**
 
@@ -302,7 +302,7 @@ ${\color{yellow}@SpringBootApplication}$ : _essa anotação diz ao Spring Boot q
 - `nameGenerator`: Uma classe para gerar nomes de beans automaticamente.
 - `proxyBeanMethods`: Uma configuração que controla se os métodos de bean devem ser proxy por CGLIB.
 
-${\color{yellow}@SpringBootConfiguration}$ : _É uma anotação do Spring Boot usada para marcar classes de configuração específicas do aplicativo. Ela estende a anotação @Configuration do Spring Framework._
+${\color{yellow}@SpringBootConfiguration}$ : _@SpringBootConfiguration é uma anotação do Spring Boot usada para marcar classes de configuração específicas do aplicativo. Ela estende a anotação @Configuration do Spring Framework._
 
 **Parâmetros:**
 
