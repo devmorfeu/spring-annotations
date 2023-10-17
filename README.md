@@ -428,8 +428,123 @@ ${\color{yellow}@SpringQueryMap}$ : _@SpringQueryMap é a versão Spring MVC equ
 
 ## Spring-context
 
-EM BREVE
+${\color{yellow}@Async}$ : _@Async é usada para marcar um método como candidato à execução assíncrona._
 
+**Parâmetros:**
+
+- `value`: _Usado para especificar um valor de qualificador para operações assíncronas específicas._
+
+${\color{yellow}@Bean}$ : _@Bean é usada para indicar que um método produz um bean a ser gerenciado pelo contêiner Spring._
+
+**Parâmetros:**
+
+- `value \ name`: _Você pode especificar um nome ou vários nomes para o bean._
+- `autowireCandidate`: _Permite determinar se o bean é um candidato para ser injetado em outros beans por padrão. O valor padrão é true._
+- `initMethod`: _Permite especificar o nome de um método que será chamado no bean durante a inicialização._
+- `destroyMethod`: _Permite especificar o nome de um método que será chamado no bean quando o contexto do aplicativo for fechado._
+
+${\color{yellow}@Cacheable}$ : _@Cacheable é usada para definir o comportamento de armazenamento em cache para os métodos anotados e permite que você ajuste o comportamento de armazenamento em cache com base em várias condições e configurações personalizadas._
+
+**Parâmetros:**
+
+- `value \ cacheNames`: _Permite especificar o nome ou os nomes das caches onde os resultados das invocações do método serão armazenados._
+- `key`: _Permite especificar uma expressão Spring Expression Language (SpEL) para calcular a chave dinamicamente para cada invocação do método._
+- `keyGenerator`: _Permite especificar o nome de um KeyGenerator personalizado que será usado para gerar as chaves. É mutuamente exclusivo com o atributo key._
+- `cacheManager`: _Permite especificar o nome de um CacheManager personalizado que será usado para criar um **CacheResolver** padrão se nenhum estiver configurado._
+- `cacheResolver`: _Permite especificar o nome de um **CacheResolver** personalizado que será usado para determinar o cache para a invocação do método._
+- `condition`: _Permite especificar uma expressão SpEL que determina se a invocação do método deve ser armazenada em cache ou não._
+- `unless`: _Permite especificar uma expressão SpEL que veta o armazenamento em cache se a condição avaliada for true._
+- `sync`: _Permite sincronizar a invocação do método se várias threads estiverem tentando carregar um valor para a mesma chave. A sincronização pode ser usada para evitar que várias threads executem a mesma invocação simultaneamente._
+
+${\color{yellow}@CacheConfig}$ : _@CacheConfig é usada para definir configurações padrão de cache em nível de classe._
+
+**Parâmetros:**
+
+- `cacheNames`: _Permite especificar o nome ou os nomes das caches onde os resultados das invocações do método serão armazenados._
+- `keyGenerator`: _Permite especificar o nome de um KeyGenerator personalizado que será usado para gerar as chaves. É mutuamente exclusivo com o atributo key._
+- `cacheManager`: _Permite especificar o nome de um CacheManager personalizado que será usado para criar um **CacheResolver** padrão se nenhum estiver configurado._
+- `cacheResolver`: _Permite especificar o nome de um **CacheResolver** personalizado que será usado para determinar o cache para a invocação do método._
+
+${\color{yellow}@CacheEvict}$ : _@CacheEvict é usada para indicar que um método ou todos os métodos em uma classe acionam operações de esvaziamento da cache._
+
+**Parâmetros:**
+
+- `cacheNames`: _Permite especificar o nome ou os nomes das caches onde os resultados das invocações do método serão armazenados._
+- `key`: _Permite especificar uma expressão Spring Expression Language (SpEL) para calcular a chave dinamicamente para cada invocação do método._
+- `keyGenerator`: _Permite especificar o nome de um KeyGenerator personalizado que será usado para gerar as chaves. É mutuamente exclusivo com o atributo key._
+- `cacheManager`: _Permite especificar o nome de um CacheManager personalizado que será usado para criar um **CacheResolver** padrão se nenhum estiver configurado._
+- `cacheResolver`: _Permite especificar o nome de um **CacheResolver** personalizado que será usado para determinar o cache para a invocação do método._
+- `condition`: _Permite especificar uma expressão SpEL que determina se a invocação do método deve ser armazenada em cache ou não._
+- `unless`: _Especifica se todas as entradas dentro do cache devem ser removidas._
+- `beforeInvocation`: _Especifica se a operação de esvaziamento da cache deve ocorrer antes da invocação do método._
+
+${\color{yellow}@CachePut}$ : _@CachePut é usada para indicar que um método ou todos os métodos em uma classe acionam operações de armazenamento em cache, que armazenam os resultados do método nas caches especificadas._
+
+**Parâmetros:**
+
+- `cacheNames`: _Permite especificar o nome ou os nomes das caches onde os resultados das invocações do método serão armazenados._
+- `keyGenerator`: _Permite especificar o nome de um KeyGenerator personalizado que será usado para gerar as chaves. É mutuamente exclusivo com o atributo key._
+- `cacheManager`: _Permite especificar o nome de um CacheManager personalizado que será usado para criar um **CacheResolver** padrão se nenhum estiver configurado._
+- `cacheResolver`: _Permite especificar o nome de um **CacheResolver** personalizado que será usado para determinar o cache para a invocação do método._
+- `condition`: _Permite especificar uma expressão SpEL que determina se a invocação do método deve ser armazenada em cache ou não._
+- `unless`: _Permite especificar uma expressão SpEL que veta o armazenamento em cache se a condição avaliada for true._
+
+${\color{yellow}@Caching}$ : _@Caching é uma anotação de agrupamento para várias anotações de cache, sejam elas do mesmo tipo (por exemplo, várias anotações @Cacheable) ou de tipos diferentes (por exemplo, @Cacheable, @CachePut e @CacheEvict). Essa anotação permite que você defina várias operações de cache em um único local._
+
+**Parâmetros:**
+
+- `cacheable`: _Permite que você especifique uma ou mais anotações @Cacheable que descrevem as operações de cache de leitura (ou seja, quando um valor é buscado em uma cache)._
+- `put`: _Permite que você especifique uma ou mais anotações @CachePut que descrevem as operações de cache de gravação (ou seja, quando um valor é armazenado em uma cache)._
+- `evict`: _Permite que você especifique uma ou mais anotações @CacheEvict que descrevem as operações de evicção de cache (ou seja, quando um valor é removido de uma cache)._
+
+${\color{yellow}@Component}$ : _@Component é uma anotação do Spring Framework que indica que uma classe anotada é um "componente". Os componentes são considerados candidatos para detecção automática quando se utiliza configuração baseada em anotações e digitalização do classpath._
+
+**Parâmetros:**
+
+- `value`: _Permite fornecer uma sugestão para um nome lógico do componente._
+
+${\color{yellow}@ComponentScan}$ : _@ComponentScan é usada para configurar diretivas de varredura de componentes para classes anotadas com @Configuration._
+
+**Parâmetros:**
+
+- `basePackages`: _Path de pacotes do projeto para verificar propriedades de configuração._
+- `basePackageClasses`: _Alternativa ("Type-safe") especificando os pacotes para verificar as propriedades de configuração. O pacote de cada classe especificada será verificado._
+- `nameGenerator`: _A classe **BeanNameGenerator** a ser usada para nomear os componentes detectados no contêiner Spring._
+- `scopeResolver`: _A classe **ScopeMetadataResolver** a ser usada para resolver o escopo dos componentes detectados._
+- `scopedProxy`: _Controla a geração de proxies para os componentes detectados, o que pode ser necessário quando se usam escopos no estilo de proxy._
+- `resourcePattern`: _Controla quais arquivos de classe são elegíveis para a detecção de componentes._
+- `useDefaultFilters`: _Indica se a detecção automática de classes anotadas com @Component, @Repository, @Service ou @Controller deve ser ativada._
+- `includeFilters \ excludeFilters`: _Filtros que podem ser usados para incluir ou excluir beans do contexto de aplicação. Isso é útil para personalizar o ambiente de teste._
+- `lazyInit`: _Especifica se os beans escaneados devem ser registrados para inicialização tardia. O padrão é false._
+
+${\color{yellow}@ComponentScans}$ : _@ComponentScans é uma anotação de contêiner que agrega várias anotações @ComponentScan. Ela pode ser usada para declarar várias anotações @ComponentScan agrupadas, permitindo que você configure várias diretivas de varredura de componentes em uma única classe de configuração._
+
+**Parâmetros:**
+
+- `value`: _Usado para especificar uma ou mais anotações @ComponentScan que contêm as configurações de varredura de componentes._
+
+${\color{yellow}@Conditional}$ : _@Conditional é usada no Spring Framework para controlar a condição sob a qual um componente é registrado no contêiner de aplicativos. Isso permite que você registre componentes somente quando determinadas condições são atendidas._
+
+**Parâmetros:**
+
+- `value`: _Permite que todas as classes de condição que devem corresponder para que o componente seja registrado.
+
+${\color{yellow}@Configuration}$ : _@Configuration é usada no Spring Framework para marcar uma classe como uma classe de configuração._
+
+**Parâmetros:**
+
+- `value`: _Atributo permite que você especifique explicitamente o nome da definição de bean do Spring associada à classe @Configuration._
+- `proxyBeanMethods`: _(desde a versão 5.2) Este atributo controla se os métodos @Bean dentro da classe @Configuration devem ser proxy, a fim de garantir o comportamento do ciclo de vida do bean._
+- `enforceUniqueMethods`: _(desde a versão 6.0) Controla se os métodos @Bean devem ter nomes de métodos exclusivos._
+
+${\color{yellow}@Controller}$ : _@Controller indica que a classe é um controlador, o que significa que ela lida com solicitações da web, processa as solicitações e fornece respostas apropriadas._
+
+**Parâmetros:**
+
+- `value`: _Sugere um nome lógico para o componente que será registrado no contêiner Spring._
+
+
+::warning:: CONTINUA ::warning::
 ## Spring-data-jpa
 
 ${\color{yellow}@DisabledOnHibernate61}$ : _@DisabledOnHibernate61 é usada para sinalizar casos de teste do JUnit 5 que devem ser desativados (ignorados) quando a versão 6.1 do Hibernate está no classpath do projeto. Isso é útil quando você deseja evitar a execução de testes que podem não ser compatíveis com uma versão específica do Hibernate. Esses testes serão ignorados quando a versão do Hibernate 6.1 estiver presente no projeto._
