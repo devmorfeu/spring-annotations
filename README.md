@@ -428,7 +428,7 @@ ${\color{yellow}@SpringQueryMap}$ : _@SpringQueryMap é a versão Spring MVC equ
 
 ## Spring-context
 
-${\color{yellow}@Async}$ : _@Async é usada para marcar um método como candidato à execução assíncrona._
+${\color{yellow}@ Async}$ : _@Async é usada para marcar um método como candidato à execução assíncrona._
 
 **Parâmetros:**
 
@@ -544,7 +544,7 @@ ${\color{yellow}@Controller}$ : _@Controller indica que a classe é um controlad
 - `value`: _Sugere um nome lógico para o componente que será registrado no contêiner Spring._
 
 
-::warning:: CONTINUA ::warning::
+:warning: CONTINUA :warning:
 ## Spring-data-jpa
 
 ${\color{yellow}@DisabledOnHibernate61}$ : _@DisabledOnHibernate61 é usada para sinalizar casos de teste do JUnit 5 que devem ser desativados (ignorados) quando a versão 6.1 do Hibernate está no classpath do projeto. Isso é útil quando você deseja evitar a execução de testes que podem não ser compatíveis com uma versão específica do Hibernate. Esses testes serão ignorados quando a versão do Hibernate 6.1 estiver presente no projeto._
