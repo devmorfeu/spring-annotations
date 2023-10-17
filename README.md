@@ -6,6 +6,8 @@ _Este documento descreve várias anotações disponíveis no Spring Framework, o
 
 - [Spring Boot 3.1.4](#spring-boot)
 - [Spring Cloud AWS 3.0.2](#spring-cloud-aws)
+- [Spring Cloud Openfeign 4.0.4](#spring-cloud-openfeign)
+- [Spring Cloud Data JPA 3.1.5](#spring-data-jpa)
 
 ## Spring-boot
 
@@ -308,4 +310,83 @@ ${\color{yellow}@SpringBootConfiguration}$ : _@SpringBootConfiguration é uma an
 
 ## Spring-cloud-aws
 
-**EM BREVE**
+${\color{yellow}@ AutoConfigureSqs}$ : _@AutoConfigureSqs é usada para importar automaticamente as configurações do Amazon Simple Queue Service (SQS) em testes típicos. Ela simplifica a configuração de testes relacionados ao SQS no Spring Boot. É frequentemente usada em conjunto com @SqsTest para testes mais específicos relacionados ao SQS._
+
+${\color{yellow}@NotificationMessage}$ : _@NotificationMessage é usada para mapear o valor de notificação do Amazon Simple Notification Service (SNS) para uma variável anotada em métodos de controladores. Isso é comumente usado para lidar com a recepção de notificações do SNS em métodos de controle._
+
+${\color{yellow}@NotificationMessageMapping}$ : _@NotificationMessageMapping é uma anotação para mapear métodos que tratam notificações Amazon SNS em controladores Spring, permitindo que os métodos processem mensagens de notificação de forma eficiente em URLs mapeadas._
+
+**Parâmetros:**
+
+- `path`: _Permite que você defina os caminhos que correspondem a esse mapeamento._
+
+${\color{yellow}@NotificationSubject}$ : _@NotificationSubject é usada para pegar o assunto de uma notificação enviada pelo Amazon Simple Notification Service (SNS) e vinculá-lo a uma variável em um método de um controlador. Isso permite que você acesse o assunto da notificação de forma direta e simples em seu código._
+
+${\color{yellow}@NotificationSubscriptionMapping}$ : _@NotificationSubscriptionMapping é usada para mapear um método de um controlador Spring para lidar com solicitações de confirmação de inscrição SNS (Simple Notification Service) quando o cabeçalho da solicitação x-amz-sns-message-type é definido como "SubscriptionConfirmation" e o método HTTP usado é o POST. Além disso, ele define que a resposta a ser enviada deve ter um status HTTP "NO_CONTENT"._
+
+**Parâmetros:**
+
+- `path`: _Permite que você defina os caminhos que correspondem a esse mapeamento._
+
+${\color{yellow}@NotificationUnsubscribeConfirmationMapping}$ : _@NotificationUnsubscribeConfirmationMapping configura um método para receber notificações de cancelamento de inscrição em um endpoint Amazon SNS._
+
+**Parâmetros:**
+
+- `path`: _Permite que você defina os caminhos que correspondem a esse mapeamento._
+
+${\color{yellow}@SqsListener}$ : _@SqsListener é usada para configurar métodos que processam mensagens em filas do Amazon Simple Queue Service (SQS)._
+
+**Parâmetros:**
+
+- `value \ queueNames`: _Especifica os nomes das filas ou URLs que serão ouvidos por este método. Você pode definir uma ou mais filas separadas por vírgulas para que o método processe mensagens de várias filas._
+- `factory`: _Permite especificar o nome de um bean que será usado para criar o MessageListenerContainer para lidar com esse endpoint. É útil se você deseja usar uma configuração personalizada para o contêiner. Por padrão, ele procurará um bean adequado no contexto._
+- `id`: _Define um identificador para o MessageListenerContainer criado para lidar com esse endpoint. Se você não fornecer um, um identificador padrão será gerado automaticamente._
+- `maxConcurrentMessages`: _Define o número máximo de mensagens que podem ser processadas simultaneamente para cada fila. Isso controla quantas mensagens seu método pode lidar de uma só vez._
+- `pollTimeoutSeconds`: _Especifica o tempo máximo em segundos que o método aguardará por mensagens em uma chamada de busca ao SQS._
+- `maxMessagesPerPoll`: _Define o número máximo de mensagens que podem ser buscadas de uma só vez. Esse valor é útil ao trabalhar com filas SQS com mensagens agrupadas._
+- `messageVisibilitySeconds`: _Controla o tempo de visibilidade das mensagens. Isso define quanto tempo as mensagens serão invisíveis após serem recebidas. Isso é útil para garantir que as mensagens não sejam processadas por vários consumidores ao mesmo tempo._
+
+${\color{yellow}@SqsTest}$ : _@SqsTest é usada para testar componentes que se concentram apenas em funcionalidades baseadas em SQS._
+
+**Parâmetros:**
+
+- `useDefaultFilters`: _Define se os filtros padrão devem ser usados em conjunto com a anotação @SpringBootApplication. Você pode configurar essa opção para incluir ou excluir determinados beans ao testar suas funcionalidades SQS._
+- `listeners`: _Especifica as classes de ouvintes a serem testadas. Isso permite que você se concentre nos ouvintes relevantes para o teste._
+- `properties`: _Permite que você adicione propriedades no formato "chave=valor" ao ambiente do Spring antes da execução do teste._
+- `includeFilters \ excludeFilters`: _Filtros que podem ser usados para incluir ou excluir beans do contexto de aplicação. Isso é útil para personalizar o ambiente de teste._
+
+## Spring-cloud-openfeign
+
+${\color{yellow}@CollectionFormat}$ : _@CollectionFormat é usada para indicar qual formato de coleção deve ser usado ao processar um método anotado._
+
+**Parâmetros:**
+
+- `value`: _Permite definir o formato de coleção a ser usado ao processar o método anotado. Você pode especificar o formato desejado, escolhendo entre as opções fornecidas no enum feign.CollectionFormat (ex: CSV ou SSV)_
+
+${\color{yellow}@EnableFeignClients}$ : _@EnableFeignClients é usada para ativar a varredura de interfaces que declaram ser clientes Feign._
+
+**Parâmetros:**
+
+- `basePackages`: _Path de pacotes do projeto para verificar propriedades de configuração._
+- `basePackageClasses`: _Alternativa ("Type-safe") especificando os pacotes para verificar as propriedades de configuração. O pacote de cada classe especificada será verificado._
+- `defaultConfiguration`: _Permite definir uma configuração personalizada para todos os clientes Feign. Você pode incluir definições de bean de substituição, como decodificadores, codificadores e contratos, para cada cliente Feign. Veja FeignClientsConfiguration para as configurações padrão._
+- `clients`: _Lista de classes anotadas com @FeignClient. Quando não estiver vazia, desabilita a varredura no classpath. É útil quando você deseja especificar explicitamente quais classes devem ser tratadas como clientes Feign, em vez de varrer todo o classpath._
+
+${\color{yellow}@FeignClient}$ : _@FeignClient é usada para declarar que uma interface representa um cliente REST Feign._
+
+**Parâmetros:**
+
+- `name`: _Especifica o nome do serviço com um prefixo de protocolo opcional. Você deve especificar um nome para todos os clientes, independentemente de uma URL ser fornecida._
+- `contextId`: _Define o nome do bean que será usado em vez de "name", mas não será usado como um ID de serviço._
+- `qualifiers`: _Especifica os qualificadores @Qualifiers para o cliente Feign._
+- `url`: _Permite especificar uma URL absoluta ou um nome de host resolvível (o protocolo é opcional)._
+- `dismiss404`: _Indica se as respostas 404 devem ser decodificadas em vez de gerar exceções Feign._
+- `configuration`: _Permite definir uma classe de configuração personalizada para o cliente Feign. Essa classe pode conter definições de beans de substituição, como decodificadores, codificadores e contratos._
+- `fallback`: _Define a classe de fallback para a interface do cliente Feign especificada. A classe de fallback deve implementar a interface anotada com @FeignClient e ser um bean Spring válido._
+- `fallbackFactory`: _Define uma fábrica de fallback para a interface do cliente Feign especificada. A fábrica de fallback deve produzir instâncias das classes de fallback que implementam a interface anotada com @FeignClient. Consulte FallbackFactory para obter detalhes._
+- `path`: _Especifica um prefixo de caminho a ser usado por todas as correspondências de nível de método._
+- `primary`: _Indica se o proxy Feign deve ser marcado como um bean primário. O valor padrão é verdadeiro, o que significa que o proxy Feign será o bean primário._
+
+${\color{yellow}@SpringQueryMap}$ : _@SpringQueryMap é a versão Spring MVC equivalente à anotação @QueryMap do OpenFeign. Ela é usada para mapear parâmetros de consulta de solicitação para um método de um controlador Spring. Isso é útil quando você deseja usar um objeto para representar os parâmetros de consulta em vez de anotar cada parâmetro individualmente. A anotação @SpringQueryMap é aplicada a um parâmetro do método e permite que você use um objeto para coletar todos os parâmetros de consulta da solicitação._
+
+##Spring-data-jpa
