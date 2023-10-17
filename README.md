@@ -4,10 +4,47 @@ _Este documento descreve várias anotações disponíveis no Spring Framework, o
 
 ## Índice
 
+- [Spring Beans 6.0.12](#spring-beans)
 - [Spring Boot 3.1.4](#spring-boot)
 - [Spring Cloud AWS 3.0.2](#spring-cloud-aws)
 - [Spring Cloud Openfeign 4.0.4](#spring-cloud-openfeign)
+- [Spring Context 6.0.12](#spring-context)
 - [Spring Data JPA 3.1.5](#spring-data-jpa)
+
+## Spring-beans
+
+${\color{yellow}@ Autowired}$ : _@Autowired é usada em Spring Framework para indicar que uma dependência deve ser automaticamente injetada. Ela pode ser usada em construtores, campos, métodos ou parâmetros._
+
+**Parâmetros:**
+
+- `required`: _ valor booleano que define se a dependência anotada é obrigatória ou opcional._
+
+${\color{yellow}@Configurable}$ : _@Configurable é usada para marcar uma classe como elegível para configuração controlada pelo Spring._
+
+**Parâmetros:**
+
+- `value`: _O nome da definição de bean que serve como modelo de configuração. Esse valor permite especificar o nome da definição de bean que deve ser usada para configurar a classe._
+- `autowire`: _Define se as dependências devem ser injetadas via autowiring. Por padrão, autowire é definido como Autowire.NO, o que significa que as dependências não serão injetadas automaticamente. Você pode definir isso como **Autowire.BY_TYPE** ou **Autowire.BY_NAME** se desejar realizar a injeção automática de dependências._
+- `dependencyCheck`: _Define se a verificação de dependências deve ser executada para objetos configurados. Se definido como true, o contêiner Spring verificará se todas as dependências estão satisfeitas. O padrão é false._
+- `preConstruction`: _Define se as dependências devem ser injetadas antes da construção do objeto. Se definido como true, as dependências serão injetadas antes que o construtor seja chamado. O padrão é false._
+
+${\color{yellow}@Lookup}$ : _@Lookup é usada para criar métodos de pesquisa que permitem obter instâncias de beans gerenciados pelo Spring._
+
+**Parâmetros:**
+
+- `value`: _Esse atributo permite sugerir o nome do bean de destino a ser pesquisado. Se não for especificado, o bean de destino será resolvido com base na declaração do tipo de retorno do método anotado._
+
+${\color{yellow}@Qualifier}$ : _@Qualifier é usada como um qualificador para beans candidatos durante a injeção de dependência._
+
+**Parâmetros:**
+
+- `value`: _Atributo que permite especificar um valor que será usado para qualificar um bean durante a injeção de dependência._
+
+${\color{yellow}@Value}$ : _@Value é usada para indicar um valor padrão ou expressão para um campo, método ou parâmetro de método/constructor anotado. Geralmente, essa anotação é usada para injetar valores por meio de expressões baseadas em SpEL._
+
+**Parâmetros:**
+
+- `value`: _Usado para especificar a expressão real do valor que será injetado._
 
 ## Spring-boot
 
@@ -388,6 +425,10 @@ ${\color{yellow}@FeignClient}$ : _@FeignClient é usada para declarar que uma in
 - `primary`: _Indica se o proxy Feign deve ser marcado como um bean primário. O valor padrão é verdadeiro, o que significa que o proxy Feign será o bean primário._
 
 ${\color{yellow}@SpringQueryMap}$ : _@SpringQueryMap é a versão Spring MVC equivalente à anotação @QueryMap do OpenFeign. Ela é usada para mapear parâmetros de consulta de solicitação para um método de um controlador Spring. Isso é útil quando você deseja usar um objeto para representar os parâmetros de consulta em vez de anotar cada parâmetro individualmente. A anotação @SpringQueryMap é aplicada a um parâmetro do método e permite que você use um objeto para coletar todos os parâmetros de consulta da solicitação._
+
+## Spring-context
+
+EM BREVE
 
 ## Spring-data-jpa
 
