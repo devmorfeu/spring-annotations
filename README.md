@@ -389,4 +389,4 @@ ${\color{yellow}@FeignClient}$ : _@FeignClient é usada para declarar que uma in
 
 ${\color{yellow}@SpringQueryMap}$ : _@SpringQueryMap é a versão Spring MVC equivalente à anotação @QueryMap do OpenFeign. Ela é usada para mapear parâmetros de consulta de solicitação para um método de um controlador Spring. Isso é útil quando você deseja usar um objeto para representar os parâmetros de consulta em vez de anotar cada parâmetro individualmente. A anotação @SpringQueryMap é aplicada a um parâmetro do método e permite que você use um objeto para coletar todos os parâmetros de consulta da solicitação._
 
-##Spring-data-jpa
+## Spring-data-jpa
