@@ -7,7 +7,7 @@ _Este documento descreve várias anotações disponíveis no Spring Framework, o
 - [Spring Boot 3.1.4](#spring-boot)
 - [Spring Cloud AWS 3.0.2](#spring-cloud-aws)
 - [Spring Cloud Openfeign 4.0.4](#spring-cloud-openfeign)
-- [Spring Cloud Data JPA 3.1.5](#spring-data-jpa)
+- [Spring Data JPA 3.1.5](#spring-data-jpa)
 
 ## Spring-boot
 
