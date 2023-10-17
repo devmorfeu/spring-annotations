@@ -17,7 +17,7 @@ ${\color{yellow}@ Autowired}$ : _@Autowired é usada em Spring Framework para in
 
 **Parâmetros:**
 
-- `required`: _ valor booleano que define se a dependência anotada é obrigatória ou opcional._
+- `required`: _valor booleano que define se a dependência anotada é obrigatória ou opcional._
 
 ${\color{yellow}@Configurable}$ : _@Configurable é usada para marcar uma classe como elegível para configuração controlada pelo Spring._
 
@@ -40,7 +40,7 @@ ${\color{yellow}@Qualifier}$ : _@Qualifier é usada como um qualificador para be
 
 - `value`: _Atributo que permite especificar um valor que será usado para qualificar um bean durante a injeção de dependência._
 
-${\color{yellow}@Value}$ : _@Value é usada para indicar um valor padrão ou expressão para um campo, método ou parâmetro de método/constructor anotado. Geralmente, essa anotação é usada para injetar valores por meio de expressões baseadas em SpEL._
+${\color{yellow}@ Value}$ : _@Value é usada para indicar um valor padrão ou expressão para um campo, método ou parâmetro de método/constructor anotado. Geralmente, essa anotação é usada para injetar valores por meio de expressões baseadas em SpEL._
 
 **Parâmetros:**
 
