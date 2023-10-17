@@ -390,3 +390,113 @@ ${\color{yellow}@FeignClient}$ : _@FeignClient é usada para declarar que uma in
 ${\color{yellow}@SpringQueryMap}$ : _@SpringQueryMap é a versão Spring MVC equivalente à anotação @QueryMap do OpenFeign. Ela é usada para mapear parâmetros de consulta de solicitação para um método de um controlador Spring. Isso é útil quando você deseja usar um objeto para representar os parâmetros de consulta em vez de anotar cada parâmetro individualmente. A anotação @SpringQueryMap é aplicada a um parâmetro do método e permite que você use um objeto para coletar todos os parâmetros de consulta da solicitação._
 
 ## Spring-data-jpa
+
+${\color{yellow}@DisabledOnHibernate61}$ : _@DisabledOnHibernate61 é usada para sinalizar casos de teste do JUnit 5 que devem ser desativados (ignorados) quando a versão 6.1 do Hibernate está no classpath do projeto. Isso é útil quando você deseja evitar a execução de testes que podem não ser compatíveis com uma versão específica do Hibernate. Esses testes serão ignorados quando a versão do Hibernate 6.1 estiver presente no projeto._
+
+${\color{yellow}@DisabledOnHibernate62}$ : _@DisabledOnHibernate62 é usada para sinalizar casos de teste do JUnit 5 que devem ser desativados (ignorados) quando a versão 6.1 do Hibernate está no classpath do projeto. Isso é útil quando você deseja evitar a execução de testes que podem não ser compatíveis com uma versão específica do Hibernate. Esses testes serão ignorados quando a versão do Hibernate 6.2 estiver presente no projeto._
+
+${\color{yellow}@EnableEnversRepositories}$ : _@EnableEnversRepositories é usada para habilitar os repositórios do Envers. Ela funciona como uma anotação meta para @EnableJpaRepositories, substituindo a classe de fábrica padrão dos repositórios por EnversRevisionRepositoryFactoryBean._
+
+**Parâmetros:**
+
+- `basePackages`: _Path de pacotes do projeto para verificar propriedades de configuração._
+- `basePackageClasses`: _Alternativa ("Type-safe") especificando os pacotes para verificar as propriedades de configuração. O pacote de cada classe especificada será verificado._
+- `includeFilters \ excludeFilters`: _Filtros que podem ser usados para incluir ou excluir beans do contexto de aplicação. Isso é útil para personalizar o ambiente de teste._
+- `repositoryImplementationPostfix`: _Usado para configurar o sufixo que será anexado ao nome do repositório ao procurar por implementações personalizadas de repositórios. Por padrão, o sufixo é definido como "Impl"._
+- `namedQueriesLocation`: _Usado para configurar a localização do arquivo de propriedades que contém as consultas nomeadas (named queries) para os repositórios. Por padrão, se esse atributo não for especificado, a localização padrão será META-INF/jpa-named-queries.properties._
+- `queryLookupStrategy`: _Usado para configurar o mecanismo de busca de estratégia de consulta para os métodos de consulta dos seus repositórios. Por padrão, se esse atributo não for especificado, a estratégia padrão é Key.CREATE_IF_NOT_FOUND._
+- `repositoryFactoryBeanClass`: _Usado para configurar a classe FactoryBean que será usada para criar instâncias de repositórios. Por padrão, se esse atributo não for especificado, a classe JpaRepositoryFactoryBean é usada como a classe de fábrica. Essa classe é responsável por criar proxies para os seus repositórios e gerenciar a injeção de dependência._
+- `repositoryBaseClass`: _Usado para configurar a classe base dos repositórios a serem criados para uma configuração específica. A classe base dos repositórios é a interface que estende a interface JpaRepository e é usada como base para criar instâncias de repositórios._
+- `entityManagerFactoryRef`: _Usado para configurar o nome da definição de bean do EntityManagerFactory que deve ser usado para criar os repositórios descobertos por meio dessa anotação. Por padrão, o nome da definição de bean do EntityManagerFactory é "entityManagerFactory"._
+- `transactionManagerRef`: _Usado para configurar o nome da definição de bean do PlatformTransactionManager que deve ser usado para criar os repositórios descobertos por meio dessa anotação. Por padrão, o nome da definição de bean do PlatformTransactionManager é "transactionManager"._
+- `considerNestedRepositories`: _Usado para configurar se as interfaces de repositório aninhadas (por exemplo, definidas como classes internas) devem ser descobertas pela infraestrutura de repositórios. Por padrão, essa configuração é definida como false, o que significa que as interfaces de repositório aninhadas não são consideradas na descoberta de repositórios._
+- `enableDefaultTransactions`: _ Usado para configurar se as transações padrão devem ser habilitadas para os repositórios Spring Data JPA. A configuração padrão é true, o que significa que as transações padrão estão habilitadas. Quando as transações padrão estão habilitadas, as operações realizadas nos métodos dos repositórios JPA são automaticamente envolvidas em transações gerenciadas pelo Spring, garantindo a consistência dos dados._
+- `bootstrapMode`: _Usado para configurar quando os repositórios são inicializados durante o ciclo de vida de inicialização do aplicativo. Isso é relevante ao usar o Spring Data JPA e a anotação @EnableEnversRepositories em uma configuração._
+- `escapeCharacter`: _Usado para configurar o caractere usado para escapar os caracteres curinga, como _ e %, em consultas derivadas no Spring Data JPA. Em consultas derivadas, você pode usar curingas para correspondência parcial de strings, mas, em alguns casos, você pode querer pesquisar literais que contêm esses caracteres curinga como parte da string em si._
+
+${\color{yellow}@EnableJpaAuditing}$ : _@EnableJpaAuditing é usada para habilitar a auditoria em JPA (Java Persistence API) por meio de configuração por anotações. A auditoria é o processo de rastreamento de ações em entidades JPA, como criação, modificação e exclusão, para fins de registro e monitoramento._
+
+**Parâmetros:**
+
+- `auditorAwareRef`: _Este atributo permite configurar o nome do bean que implementa a interface AuditorAware. Um AuditorAware é usado para procurar o princípio atual que está executando a ação de auditoria. Por padrão, esse atributo está vazio, o que significa que o mecanismo padrão será usado para determinar o principal atual._
+- `setDates`: _Este atributo configura se as datas de criação e modificação devem ser definidas. Se for true, as datas de criação e modificação serão definidas automaticamente ao criar ou modificar entidades. Se for false, as datas não serão definidas automaticamente. O valor padrão é true._
+- `modifyOnCreate`: _Este atributo configura se a entidade deve ser marcada como modificada na criação. Se for true, a entidade será considerada modificada quando criada. Se for false, a entidade não será marcada como modificada na criação. O valor padrão é true._
+- `dateTimeProviderRef`: _Este atributo permite configurar o nome do bean que implementa a interface DateTimeProvider. Um DateTimeProvider é usado para personalizar o objeto TemporalAccessor usado para definir datas de criação e modificação. Se você não especificar um valor para este atributo, o mecanismo padrão será usado._
+
+${\color{yellow}@EnableJpaRepositories}$ : _@EnableJpaRepositories usada para habilitar a criação de repositórios JPA (Java Persistence API) em um aplicativo Spring. Esses repositórios são usados para acessar e manipular entidades de banco de dados comuns em aplicativos Spring Data._
+
+**Parâmetros:**
+
+- `basePackages`: _Path de pacotes do projeto para verificar propriedades de configuração._
+- `basePackageClasses`: _Alternativa ("Type-safe") especificando os pacotes para verificar as propriedades de configuração. O pacote de cada classe especificada será verificado._
+- `includeFilters \ excludeFilters`: _Filtros que podem ser usados para incluir ou excluir beans do contexto de aplicação. Isso é útil para personalizar o ambiente de teste._
+- `repositoryImplementationPostfix`: _Usado para configurar o sufixo que será anexado ao nome do repositório ao procurar por implementações personalizadas de repositórios. Por padrão, o sufixo é definido como "Impl"._
+- `namedQueriesLocation`: _Usado para configurar a localização do arquivo de propriedades que contém as consultas nomeadas (named queries) para os repositórios. Por padrão, se esse atributo não for especificado, a localização padrão será META-INF/jpa-named-queries.properties._
+- `queryLookupStrategy`: _Usado para configurar o mecanismo de busca de estratégia de consulta para os métodos de consulta dos seus repositórios. Por padrão, se esse atributo não for especificado, a estratégia padrão é Key.CREATE_IF_NOT_FOUND._
+- `repositoryFactoryBeanClass`: _Usado para configurar a classe FactoryBean que será usada para criar instâncias de repositórios. Por padrão, se esse atributo não for especificado, a classe JpaRepositoryFactoryBean é usada como a classe de fábrica. Essa classe é responsável por criar proxies para os seus repositórios e gerenciar a injeção de dependência._
+- `repositoryBaseClass`: _Usado para configurar a classe base dos repositórios a serem criados para uma configuração específica. A classe base dos repositórios é a interface que estende a interface JpaRepository e é usada como base para criar instâncias de repositórios._
+- `entityManagerFactoryRef`: _Usado para configurar o nome da definição de bean do EntityManagerFactory que deve ser usado para criar os repositórios descobertos por meio dessa anotação. Por padrão, o nome da definição de bean do EntityManagerFactory é "entityManagerFactory"._
+- `transactionManagerRef`: _Usado para configurar o nome da definição de bean do PlatformTransactionManager que deve ser usado para criar os repositórios descobertos por meio dessa anotação. Por padrão, o nome da definição de bean do PlatformTransactionManager é "transactionManager"._
+- `considerNestedRepositories`: _Usado para configurar se as interfaces de repositório aninhadas (por exemplo, definidas como classes internas) devem ser descobertas pela infraestrutura de repositórios. Por padrão, essa configuração é definida como false, o que significa que as interfaces de repositório aninhadas não são consideradas na descoberta de repositórios._
+- `enableDefaultTransactions`: _ Usado para configurar se as transações padrão devem ser habilitadas para os repositórios Spring Data JPA. A configuração padrão é true, o que significa que as transações padrão estão habilitadas. Quando as transações padrão estão habilitadas, as operações realizadas nos métodos dos repositórios JPA são automaticamente envolvidas em transações gerenciadas pelo Spring, garantindo a consistência dos dados._
+- `bootstrapMode`: _Usado para configurar quando os repositórios são inicializados durante o ciclo de vida de inicialização do aplicativo. Isso é relevante ao usar o Spring Data JPA e a anotação @EnableEnversRepositories em uma configuração._
+- `escapeCharacter`: _Usado para configurar o caractere usado para escapar os caracteres curinga, como _ e %, em consultas derivadas no Spring Data JPA. Em consultas derivadas, você pode usar curingas para correspondência parcial de strings, mas, em alguns casos, você pode querer pesquisar literais que contêm esses caracteres curinga como parte da string em si._
+
+${\color{yellow}@EntityGraph}$ : _@EntityGraph é usada para configurar os grafos de entidades (EntityGraphs) que devem ser usados em métodos de repositório JPA no Spring Data. Os grafos de entidades permitem definir quais atributos das entidades associadas devem ser carregados junto com a entidade principal, evitando problemas de carregamento preguiçoso (lazy loading) e melhorando o desempenho de consultas._
+
+**Parâmetros:**
+
+- `type`: _Este atributo configura o tipo do EntityGraph a ser usado. O valor padrão é EntityGraphType.FETCH, que significa que os atributos listados no EntityGraph serão carregados como FetchType.EAGER. Outro valor disponível é EntityGraphType.LOAD, que trata atributos não listados como FetchType.EAGER e os demais de acordo com suas configurações padrão de FetchType._
+- `attributePaths`: _Este atributo permite personalizar o grafo de entidades definindo caminhos de atributos que devem ser carregados de forma ad-hoc. Se este atributo for especificado, o nome do EntityGraph (type()) será ignorado e o EntityGraph será considerado como dinâmico. Isso permite que você defina atributos específicos para carregamento em um método de repositório._
+
+${\color{yellow}@Lock}$ : _@Lock é usada para especificar o tipo de bloqueio (LockModeType) a ser usado ao executar uma consulta ou método de CRUD em um repositório JPA no Spring Data. Os bloqueios são usados para controlar o acesso concorrente aos registros do banco de dados, permitindo que você defina como as transações devem travar os registros durante a execução da consulta._
+
+**Parâmetros:**
+
+- `value`: _Este atributo especifica o tipo de bloqueio a ser usado ao executar a consulta ou método de CRUD. Ele deve ser uma constante do tipo LockModeType, que define o modo de bloqueio desejado. Alguns dos valores comuns incluem:
+  LockModeType.NONE: Nenhum bloqueio é aplicado (padrão).
+  LockModeType.OPTIMISTIC: Bloqueio otimista, onde as alterações no banco de dados são verificadas antes da gravação.
+  LockModeType.OPTIMISTIC_FORCE_INCREMENT: Bloqueio otimista com forçar incremento, usado para forçar a atualização do número de versão.
+  LockModeType.PESSIMISTIC_READ: Bloqueio pessimista de leitura.
+  LockModeType.PESSIMISTIC_WRITE: Bloqueio pessimista de gravação._
+
+${\color{yellow}@Modifying}$ : _@Modifying usada em métodos de consulta para indicar que a consulta é uma consulta modificadora, o que significa que ela realiza operações que modificam os dados no banco de dados. Isso afeta a forma como a consulta deve ser executada e como o contexto de persistência deve ser gerenciado durante a execução da consulta. Essa anotação é geralmente usada em conjunto com a anotação @Query._
+
+**Parâmetros:**
+
+- `flushAutomatically`: _Este atributo especifica se o contexto de persistência deve ser automaticamente descarregado (flushed) antes de executar a consulta modificadora._
+- `clearAutomatically`: _Este atributo especifica se o contexto de persistência deve ser automaticamente limpo (cleared) após a execução da consulta modificadora._
+
+${\color{yellow}@Procedure}$ : _@Procedure é usada para declarar mapeamentos de procedimentos armazenados JPA 2.1 diretamente em métodos de repositório. Isso permite chamar procedimentos armazenados do banco de dados por meio de métodos de repositório JPA, simplificando a interação com procedimentos armazenados._
+
+**Parâmetros:**
+
+- `procedureName`: _Este atributo também especifica o nome do procedimento no banco de dados. O valor padrão é uma string vazia ("")._
+- `name`: _Especifica o nome do procedimento no EntityManager. O valor padrão é uma string vazia ("")._
+- `outputParameterName`: _Este atributo especifica o nome do parâmetro de saída do procedimento armazenado. O valor padrão é uma string vazia ("")._
+- `refCursor`: _Especifica se o procedimento retorna um Ref Cursor do banco de dados. Um Ref Cursor é uma estrutura de dados que pode ser usada para percorrer conjuntos de resultados. O valor padrão é false._
+
+${\color{yellow}@Query}$ : _@Query é usada para declarar consultas personalizadas diretamente em métodos de repositório. Isso permite definir as consultas JPA que serão executadas quando um método anotado com @Query for chamado._
+
+**Parâmetros:**
+
+- `value`: _Esse atributo define a consulta JPA a ser executada quando o método anotado é chamado. O valor padrão é uma string vazia ("")._
+- `countQuery`: _Esse atributo permite definir uma consulta especial de contagem que será usada para consultas de paginação a fim de obter o número total de elementos em uma página._
+- `countProjection`: _Este atributo define a parte de projeção da consulta de contagem gerada para consultas de paginação. Se nenhum countQuery() nem countProjection() estiver configurado, a consulta de contagem será derivada da consulta original._
+- `nativeQuery`: _Esse atributo configura se a consulta é uma consulta nativa (SQL) em vez de uma consulta JPQL. O valor padrão é false._
+- `name`: _Especifica o nome da consulta nomeada a ser usada. Se não for definido, uma @NamedQuery com o nome {$domainClass}.${queryMethodName} será usada._
+- `countName`: _Especifica o nome da consulta nomeada a ser usada para executar consultas de contagem ao usar a paginação. O padrão é derivar o nome da consulta da consulta nomeada configurada, seguido de `.count`._
+- `queryRewriter`: _Esse atributo permite definir um QueryRewriter que deve ser aplicado à string da consulta após a montagem completa da consulta. Isso é útil para modificar ou ajustar a consulta antes de ser executada._
+
+${\color{yellow}@QueryHints}$ : _@QueryHints são dicas para otimizar a execução de consultas no JPA. A anotação @QueryHints permite que essas dicas sejam aplicadas a consultas definidas em métodos de repositório ou derivadas a partir do nome do método._
+
+**Parâmetros:**
+
+- `value`: _Esse atributo permite especificar um ou mais objetos @QueryHint. Os objetos @QueryHint são usados para configurar dicas específicas para a consulta, como hints de cache, dicas de busca, etc._
+- `forCounting`: _Esse atributo define se as dicas de consulta configuradas também devem ser aplicadas a consultas de contagem durante a paginação. O valor padrão é true, o que significa que as dicas se aplicam a consultas de contagem._
+
+${\color{yellow}@Temporal}$ : _@Temporal é usada para declarar o tipo de data a ser usado em parâmetros de métodos de consulta. Ela é usada em conjunto com parâmetros de tipo Date para indicar o tipo de data que será usado em uma consulta._
+
+**Parâmetros:**
+
+- `value`: _Este atributo permite definir o tipo de data a ser usado para o parâmetro anotado. O valor padrão é **TemporalType.DATE**, mas você pode especificar outros valores, como **TemporalType.TIME** ou **TemporalType.TIMESTAMP**._
