@@ -543,8 +543,254 @@ ${\color{yellow}@Controller}$ : _@Controller indica que a classe é um controlad
 
 - `value`: _Sugere um nome lógico para o componente que será registrado no contêiner Spring._
 
+${\color{yellow}@DependsOn}$ : _@DependsOn é usada para controlar explicitamente a ordem de inicialização e, para beans singleton, a ordem de destruição dos beans no contexto do Spring._
 
-:warning: CONTINUA :warning:
+${\color{yellow}@Description}$ : _@Description é usada no contexto do Spring Framework para adicionar uma descrição textual a definições de beans derivados de classes anotadas com @Component ou de métodos anotados com @Bean._
+
+**Parâmetros:**
+
+- `value`: _Descrição textual que você deseja associar ao bean._
+
+${\color{yellow}@DateTimeFormat}$ : _@DateTimeFormat é usada no Spring Framework para declarar como um campo, parâmetro de método ou atributo de anotação deve ser formatado como data ou hora._
+
+**Parâmetros:**
+
+- `style`: _Define o estilo de formatação da data ou hora. O valor padrão é "SS" para um estilo de data curto e hora curta._
+- `iso`: _Define o formato ISO da data ou hora. Os formatos ISO suportados são definidos na enumeração ISO. O valor padrão é ISO.NONE, indicando que esse atributo deve ser ignorado._
+- `pattern`: _Permite especificar um padrão de formato personalizado para a data ou hora. O padrão segue o estilo do **SimpleDateFormat**._
+- `fallbackPatterns`: _Define um conjunto de padrões personalizados de fallback em caso de falha na conversão usando o padrão principal, ISO ou estilo. Isso é útil quando você deseja permitir formatações flexíveis para entrada de usuário._
+
+${\color{yellow}@EnableAsync}$ : _@EnableAsync é usada no Spring Framework para habilitar a capacidade de execução assíncrona de métodos._
+
+**Parâmetros:**
+
+- `annotation`: _Permite indicar o tipo de anotação de "async" que deve ser detectada em nível de classe ou método. Por padrão, o Spring detectará tanto a anotação @Async do Spring._
+- `proxyTargetClass`: _Controla se proxies baseados em classes (CGLIB) devem ser criados em oposição a proxies baseados em interfaces padrão do Java._
+- `mode`: _Indica como o conselho assíncrono deve ser aplicado. O padrão é AdviceMode.PROXY, que permite a interceptação de chamadas por meio do proxy._
+- `order`: _Controla a ordem em que o AsyncAnnotationBeanPostProcessor deve ser aplicado. O padrão é **Ordered.LOWEST_PRECEDENCE**._
+
+${\color{yellow}@EnableAspectJAutoProxy}$ : _@EnableAspectJAutoProxy é usada para habilitar o suporte ao tratamento de componentes marcados com a anotação @Aspect do AspectJ._
+
+**Parâmetros:**
+
+- `proxyTargetClass`: _Controla se proxies baseados em classes (CGLIB) devem ser criados em oposição a proxies baseados em interfaces padrão do Java._
+- `exposeProxy`: _Indica se o proxy deve ser exposto pelo framework AOP como um ThreadLocal para recuperação por meio da classe AopContext do Spring._
+
+${\color{yellow}@EnableCaching}$ : _@EnableCaching é usada para habilitar o suporte ao gerenciamento de cache baseado em anotações no Spring._
+
+**Parâmetros:**
+
+- `proxyTargetClass`: _Controla se proxies baseados em classes (CGLIB) devem ser criados em oposição a proxies baseados em interfaces padrão do Java._
+- `mode`: _Indica como o conselho assíncrono deve ser aplicado. O padrão é AdviceMode.PROXY, que permite a interceptação de chamadas por meio do proxy._
+- `order`: _Indica como o aconselhamento de cache deve ser aplicado. O padrão é AdviceMode.PROXY._
+
+${\color{yellow}@EnableLoadTimeWeaving}$ : _@EnableLoadTimeWeaving é usada para ativar um carregador de tempo de execução (Load Time Weaver) para um contexto de aplicação Spring. Isso é útil quando se deseja realizar tecelagem (weaving) de aspectos, especialmente no contexto do AspectJ, durante o tempo de carregamento de classes._
+
+**Parâmetros:**
+
+- `aspectjWeaving`: _Controla se a tecelagem AspectJ deve ser ativada. Os valores possíveis para aspectjWeaving são: **AspectJWeaving.ENABLED**, **AspectJWeaving.DISABLED**, **AspectJWeaving.AUTODETECT**_
+
+${\color{yellow}@EnableMBeanExport}$ : _@EnableMBeanExport é usada para habilitar a exportação de MBeans (Managed Beans) em um contexto Spring, facilitando a exposição de beans gerenciados como MBeans em um servidor JMX (Java Management Extensions). Isso permite monitorar e gerenciar esses beans usando ferramentas de gerenciamento JMX._
+
+**Parâmetros:**
+
+- `defaultDomain`: _Define o domínio padrão a ser usado ao gerar ObjectNames JMX. Um ObjectName JMX é uma identificação exclusiva usada para identificar um MBean. Se não for fornecido, o domínio padrão é usado._
+- `server`: _Permite especificar o nome do bean MBeanServer ao qual os MBeans devem ser exportados. Por padrão, o servidor MBean padrão da plataforma é usado._
+- `registration`: _Especifica a política a ser usada ao tentar registrar um MBean sob um ObjectName que já existe. Os valores possíveis para esse atributo são: **RegistrationPolicy.FAIL_ON_EXISTING**, **RegistrationPolicy.IGNORE_EXISTING** e **RegistrationPolicy.REPLACE_EXISTING**_
+
+${\color{yellow}@EnableScheduling}$ : _@EnableScheduling é usada em classes de configuração do Spring para habilitar a capacidade de execução de tarefas agendadas. Essas tarefas agendadas são definidas por meio de anotações @Scheduled._
+
+${\color{yellow}@EventListener}$ : _@EventListener é usada no Spring Framework para marcar um método como um ouvinte de eventos da aplicação. Esse método será invocado quando o evento especificado ocorrer._
+
+**Parâmetros:**
+
+- `value / classes`: _Especificar os tipos de eventos que o ouvinte deve manipular._
+- `condition`: _Este atributo permite que você especifique uma expressão Spring Expression Language (SpEL) que controla condicionalmente se o método do ouvinte é chamado._
+- `id`: _A partir do Spring 5.3.5, você pode usar o atributo id para especificar um identificador exclusivo para o ouvinte. Isso é útil quando você precisa identificar ou remover o ouvinte posteriormente._
+
+${\color{yellow}@Import}$ : _@Import é usada para importar um ou mais componentes no contexto de aplicação._
+
+**Parâmetros:**
+
+- `value`: _@Configuration, ImportSelector, ImportBeanDefinitionRegistrar ou classes de componentes regulares para importar._
+
+${\color{yellow}@ImportResource}$ : _@ImportResource é usada no Spring Framework para importar definições de beans de recursos externos, como arquivos XML de configuração, para o contexto de aplicação. É semelhante à anotação @Import, mas é usada para importar recursos externos, enquanto @Import é usada para importar classes de configuração e outros componentes._
+
+**Parâmetros:**
+
+- `locations`: _Pode usar os prefixos de carregamento de recursos, como classpath:, file:, etc._
+- `reader`: _Você pode substituir o leitor padrão **BeanDefinitionReader**._
+
+${\color{yellow}@ImportRuntimeHints}$ : _@ImportRuntimeHints é usada no contexto do Spring Framework para indicar que uma ou mais implementações da interface RuntimeHintsRegistrar devem ser processadas._
+
+**Parâmetros:**
+
+- `value`: _Onde você lista as classes que contêm dicas de tempo de execução para serem usadas na otimização do seu aplicativo._
+
+${\color{yellow}@Indexed}$ : _@Indexed é usada para indicar que o elemento anotado representa um estereótipo (stereotype) que deve ser indexado no contexto do Spring._
+
+${\color{yellow}@Lazy}$ : _@Lazy é usada para indicar se um bean deve ser inicializado de forma preguiçosa (lazy initialization) ou de forma imediata (eager initialization) em um contexto do Spring._
+
+**Parâmetros:**
+
+- `value`: _Indica se a inicialização lenta deve ocorrer._
+
+${\color{yellow}@ManagedAttribute}$ : _@ManagedAttribute é usada para indicar que um determinado método de um bean deve ser exposto como um atributo JMX._
+
+**Parâmetros:**
+
+- `defaultValue`: _Permite definir um valor padrão para o atributo no descritor JMX._
+- `description`: _Usado para definir uma descrição para o atributo no descritor JMX._
+- `currencyTimeLimit`: _Controla a duração de tempo em que o valor do atributo permanece válido._
+- `persistPolicy`: _Usado para indicar como o valor do atributo deve ser persistido._
+- `persistPeriod`: _Controla a frequência com que o valor do atributo é persistido._
+
+${\color{yellow}@ManagedMetric}$ : _@ManagedMetric é usada para indicar que um método de um bean deve ser exposto como um atributo JMX, com informações adicionais para indicar que se trata de uma métrica._
+
+**Parâmetros:**
+
+- `category`: _Especifica a categoria à qual a métrica pertence. Pode ser usado para organizar as métricas em grupos relacionados._
+- `currencyTimeLimit`: _Controla a duração de tempo em que o valor do atributo permanece válido._
+- `description`: _Permite fornecer uma descrição da métrica, explicando o que ela representa._
+- `displayName`: _Especifica um nome amigável para a métrica que pode ser exibido em ferramentas de gerenciamento e monitoramento._
+- `metricType`: _Define o tipo da métrica, que pode ser um dos seguintes: **MetricType.GAUGE** e **MetricType.COUNTER**._
+- `persistPeriod`: _Controla a frequência com que o valor do atributo é persistido._
+- `persistPolicy`: _Usado para indicar como o valor do atributo deve ser persistido._
+- `unit`: _Define a unidade da métrica, indicando qual é a unidade de medida dos valores da métrica, como "bytes," "milissegundos," "solicitações," etc._
+
+${\color{yellow}@ManagedNotification}$ : _@ManagedNotification é usada para indicar que um bean em um aplicativo JMX emite notificações JMX. Notificações JMX são mensagens que um bean envia para notificar eventos ou mudanças de estado._
+
+**Parâmetros:**
+
+- `name`: _Especifica o nome da notificação JMX. O nome deve ser exclusivo dentro do contexto JMX. É usado para identificar a notificação e, portanto, deve ser exclusivo para evitar conflitos._
+- `description`: _Permite fornecer uma descrição da métrica, explicando o que ela representa._
+- `notificationTypes`: _Especifica os tipos de notificação que podem ser gerados por esta notificação. Os tipos de notificação são strings que descrevem o tipo da notificação, como "error," "warning," "info," etc. Uma notificação pode ter vários tipos._
+
+${\color{yellow}@ManagedNotifications}$ : _@ManagedNotifications é um container de nível de tipo usada para agrupar uma ou mais declarações da anotação @ManagedNotification._
+
+**Parâmetros:**
+
+- `value`: _Agrupamento de anotações @ManagedNotification._
+
+${\color{yellow}@ManagedOperation}$ : _@ManagedOperation é usada para indicar que um método deve ser exposto como uma operação JMX._
+
+**Parâmetros:**
+
+- `description`: _Permite fornecer uma descrição da métrica, explicando o que ela representa._
+- `currencyTimeLimit`: _Controla a duração de tempo em que o valor do atributo permanece válido._
+
+${\color{yellow}@ManagedOperationParameter}$ : _@ManagedOperationParameter é usada para fornecer metadados sobre os parâmetros de uma operação JMX._
+
+**Parâmetros:**
+
+- `name`: _Permite especificar o nome do parâmetro da operação._
+- `description`: _Permite fornecer uma descrição da métrica, explicando o que ela representa._
+
+${\color{yellow}@ManagedOperationParameters}$ : _@ManagedOperationParameters é um container de nível de tipo usada para agrupar uma ou mais declarações da anotação @ManagedOperationParameter._
+
+**Parâmetros:**
+
+- `value`: _Agrupamento de anotações @ManagedOperationParameter._
+
+${\color{yellow}@ManagedResource}$ : _@ManagedResource é usada para registrar instâncias de uma classe com um servidor JMX._
+
+**Parâmetros:**
+
+- `value / objectName`: _permite especificar o nome do objeto JMX sob o qual a instância da classe será registrada no servidor JMX._
+- `description`: _Permite fornecer uma descrição da métrica, explicando o que ela representa._
+- `currencyTimeLimit`: _Controla a duração de tempo em que o valor do atributo permanece válido._
+- `log`: _permite especificar o nome do objeto JMX sob o qual a instância da classe será registrada no servidor JMX._
+- `logFile`: _permite especificar o nome do objeto JMX sob o qual a instância da classe será registrada no servidor JMX._
+- `persistPolicy`: _Usado para indicar como o valor do atributo deve ser persistido._
+- `persistPeriod`: _Controla a frequência com que o valor do atributo é persistido._
+- `persistName`: _Especifica um nome para os dados persistidos._
+- `persistLocation`: _Especifica o local onde os dados persistidos serão armazenados._
+
+${\color{yellow}@NumberFormat}$ : _@NumberFormat é usada para declarar que um campo, método ou parâmetro de método deve ser formatado como um número._
+
+**Parâmetros:**
+
+- `style`: _Especifica o estilo de formatação a ser usado para o campo._
+- `pattern`: _Permite que você especifique um padrão de formatação personalizado._
+
+${\color{yellow}@Primary}$ : _@Primary é usada para indicar que um bean deve ser preferido quando existem vários candidatos qualificados para atender a uma dependência com um único valor._
+
+**Parâmetros:**
+
+- `style`: _Especifica o estilo de formatação a ser usado para o campo._
+- `pattern`: _Permite que você especifique um padrão de formatação personalizado._
+
+${\color{yellow}@Profile}$ : _@Profile é usada para indicar que um componente deve ser registrado e processado somente quando um ou mais perfis específicos estão ativos no aplicativo Spring._
+
+**Parâmetros:**
+
+- `value`: _Aceita um array de strings representando os nomes dos perfis._
+
+${\color{yellow}@PropertySource}$ : _@PropertySource é usada para carregar propriedades a partir de arquivos de configuração, que podem ser arquivos .properties ou arquivos XML._
+
+**Parâmetros:**
+
+- `name`: _Indica o nome exclusivo desta fonte de propriedades. Se omitido, o nome será gerado com base na origem subjacente._
+- `value`: _Indica as localizações dos arquivos de propriedades a serem carregados. O padrão é suportado para diferentes formatos de arquivo, como *.properties ou *.xml._
+- `ignoreResourceNotFound`: _Indica se uma falha ao encontrar um recurso de propriedades deve ser ignorada. Definir isso como true é apropriado se o arquivo de propriedades for completamente opcional. O padrão é false._
+- `encoding`: _Especifica uma codificação de caracteres específica para os recursos fornecidos. Por exemplo, você pode definir UTF-8 como a codificação._
+- `factory`: _Especifica uma fábrica personalizada de PropertySource a ser usada._
+
+${\color{yellow}@PropertySources}$ : _@PropertySources é uma anotação container que permite agregar várias anotações @PropertySource._
+
+**Parâmetros:**
+
+- `value`: _Agrupamento de anotações @PropertySource._
+
+${\color{yellow}@Repository}$ : _@Repository é usada para marcar classes que desempenham o papel de repositórios de dados, geralmente para acesso a banco de dados._
+
+**Parâmetros:**
+
+- `value`: _Pode indicar uma sugestão de nome de componente lógico._
+
+${\color{yellow}@Role}$ : _@Role é usada para indicar o "papel" (role) de um bean._
+
+**Parâmetros:**
+
+- `value`: _Permite especificar um valor inteiro que representa o papel do bean no contexto da aplicação._
+
+${\color{yellow}@Scope}$ : _@Scope é usada para definir o escopo de uma instância gerenciada pelo Spring, o que afeta a vida útil da instância e como ela é compartilhada ou criada._
+
+**Parâmetros:**
+
+- `scopeName`: _Permite especificar o nome do escopo a ser usado para as instâncias do tipo anotado. O escopo se refere à vida útil da instância do bean._
+- `proxyMode`: _Permite especificar se o componente deve ser configurado como um proxy de escopo._
+
+${\color{yellow}@Scheduled}$ : _@Scheduled é usada no Spring Framework para agendar a execução de um método de maneira programada._
+
+**Parâmetros:**
+
+- `cron`: _Especifica uma expressão cron que define quando a tarefa será executada._
+- `fixedDelay`: _Define um atraso fixo entre o término de uma invocação do método agendado e o início da próxima invocação. O atraso é especificado em milissegundos._
+- `fixedRate`: _Define um intervalo fixo entre invocações consecutivas do método agendado, independentemente de quando o método anterior terminou. O intervalo é especificado em milissegundos._
+- `initialDelay`: _Define um atraso inicial antes da primeira invocação do método agendado. O atraso é especificado em milissegundos._
+- `zone`: _Especifica a zona de tempo na qual a expressão cron deve ser avaliada. Por padrão, ele usa a zona de tempo do servidor._
+- `fixedDelayString / fixedRateString / initialDelayString`: _Versões alternativas dos atributos acima que permitem usar valores de string, incluindo suporte a expressões SpEL._
+- `timeUnit`: _Permite especificar a unidade de tempo para os atributos fixedDelay, fixedRate, initialDelay, fixedDelayString, fixedRateString e initialDelayString._
+
+${\color{yellow}@Schedules}$ : _@Schedules é uma anotação de contêiner que permite agrupar várias anotações @Scheduled em um único local._
+
+**Parâmetros:**
+
+- `value`: _Agrupamento de anotações @Scheduled._
+
+${\color{yellow}@Service}$ : _@Service é usada para indicar que uma classe é um "Serviço" no contexto de um aplicativo Spring._
+
+**Parâmetros:**
+
+- `value`: _Permite especificar um nome para o componente._
+
+${\color{yellow}@Validated}$ : _@Validated é usada para indicar que uma classe, método ou argumento de método deve ser validado._
+
+**Parâmetros:**
+
+- `value`: _Permite especificar grupos de validação personalizados que serão aplicados durante a validação._
+
 ## Spring-data-jpa
 
 ${\color{yellow}@DisabledOnHibernate61}$ : _@DisabledOnHibernate61 é usada para sinalizar casos de teste do JUnit 5 que devem ser desativados (ignorados) quando a versão 6.1 do Hibernate está no classpath do projeto. Isso é útil quando você deseja evitar a execução de testes que podem não ser compatíveis com uma versão específica do Hibernate. Esses testes serão ignorados quando a versão do Hibernate 6.1 estiver presente no projeto._
