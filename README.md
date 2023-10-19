@@ -794,7 +794,44 @@ ${\color{yellow}@ Validated}$ : _@Validated é usada para indicar que uma classe
 
 ## Spring-core
 
-:warning: EM BREVE :warning:
+${\color{yellow}@AliasFor}$ : _@AliasFor é usada para declarar aliases (apelidos) para atributos em anotações._
+
+**Parâmetros:**
+
+- `value / attribute`: _Indica qual atributo na anotação atual é um alias para outro atributo._
+- `annotation`: _indica o tipo de anotação em que o atributo alvo (atributo especificado em attribute) é declarado._
+
+${\color{yellow}@Instantiator}$ : _@Instantiator é usada para indicar que a classe anotada é um instantiator (instanciador) de um tipo específico._
+
+**Parâmetros:**
+
+- `value`: _Usado para especificar o tipo de instantiator que a classe representa que são **STANDARD**, **SERIALIZATION**, **NOT_COMPLIANT** e **UNKNOWN**._
+
+${\color{yellow}@NonNull}$ : _@NonNull é uma anotação do Spring Framework usada para declarar que os elementos anotados não podem ser nulos._
+
+${\color{yellow}@NonNullApi}$ : _@NonNullApi é usada no Spring Framework para declarar que, por padrão, os parâmetros e valores de retorno devem ser considerados como não nulos em um determinado pacote._
+
+${\color{yellow}@NonNullFields}$ : _@NonNullFields é usada no Spring Framework para declarar que, por padrão, os campos (fields) em uma determinada classe ou pacote devem ser considerados como não nulos._
+
+${\color{yellow}@Nullable}$ : _@Nullable é uma anotação do Spring Framework usada para declarar que os elementos anotados podem ser nulos em algumas circunstâncias._
+
+${\color{yellow}@Order}$ : _@Order é usada no Spring Framework para definir a ordem de classificação de um componente anotado._
+
+**Parâmetros:**
+
+- `value`: _Definido como Ordered.LOWEST_PRECEDENCE. Valores menores têm prioridade mais alta. Isso significa que um componente com um valor de ordem menor terá uma prioridade mais alta na ordenação em relação a outros componentes com valores de ordem mais altos._
+
+${\color{yellow}@Reflective}$ : _@Reflective é usada para indicar que um elemento requer reflexão e permite especificar os processadores que serão usados para tratar esse elemento._
+
+**Parâmetros:**
+
+- `value / processors`: _Permite especificar os processadores a serem usados para tratar o elemento anotado._
+
+${\color{yellow}@RegisterReflectionForBinding}$ : _@RegisterReflectionForBinding é usada para indicar que as classes especificadas nos atributos da anotação requerem algumas dicas de reflexão para fins de vinculação ou serialização baseada em reflexão._
+
+**Parâmetros:**
+
+- `value / processors`: _Para cada classe especificada nos atributos value ou classes da anotação, são registradas dicas de reflexão em construtores, campos, propriedades e componentes de registro (caso seja uma classe de registro)._
 
 ## Spring-data-jpa
 
