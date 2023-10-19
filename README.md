@@ -9,6 +9,7 @@ _Este documento descreve várias anotações disponíveis no Spring Framework, o
 - [Spring Cloud AWS 3.0.2](#spring-cloud-aws)
 - [Spring Cloud Openfeign 4.0.4](#spring-cloud-openfeign)
 - [Spring Context 6.0.12](#spring-context)
+- [Spring Core 6.0.12](#spring-core)
 - [Spring Data JPA 3.1.5](#spring-data-jpa)
 
 ## Spring-beans
@@ -790,6 +791,9 @@ ${\color{yellow}@ Validated}$ : _@Validated é usada para indicar que uma classe
 **Parâmetros:**
 
 - `value`: _Permite especificar grupos de validação personalizados que serão aplicados durante a validação._
+
+## Spring-core
+
 
 ## Spring-data-jpa
 
