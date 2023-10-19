@@ -785,7 +785,7 @@ ${\color{yellow}@Service}$ : _@Service é usada para indicar que uma classe é u
 
 - `value`: _Permite especificar um nome para o componente._
 
-${\color{yellow}@Validated}$ : _@Validated é usada para indicar que uma classe, método ou argumento de método deve ser validado._
+${\color{yellow}@ Validated}$ : _@Validated é usada para indicar que uma classe, método ou argumento de método deve ser validado._
 
 **Parâmetros:**
 
