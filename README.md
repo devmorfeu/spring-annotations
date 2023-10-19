@@ -795,7 +795,7 @@ ${\color{yellow}@ Validated}$ : _@Validated é usada para indicar que uma classe
 
 ## Spring-core
 
-${\color{yellow}@AliasFor}$ : _@AliasFor é usada para declarar aliases (apelidos) para atributos em anotações._
+${\color{yellow}@A liasFor}$ : _@AliasFor é usada para declarar aliases (apelidos) para atributos em anotações._
 
 **Parâmetros:**
 
