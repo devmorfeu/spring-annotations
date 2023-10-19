@@ -794,6 +794,7 @@ ${\color{yellow}@ Validated}$ : _@Validated é usada para indicar que uma classe
 
 ## Spring-core
 
+:warning: EM BREVE :warning:
 
 ## Spring-data-jpa
 
