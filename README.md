@@ -11,6 +11,7 @@ _Este documento descreve várias anotações disponíveis no Spring Framework, o
 - [Spring Context 6.0.12](#spring-context)
 - [Spring Core 6.0.12](#spring-core)
 - [Spring Data JPA 3.1.5](#spring-data-jpa)
+- [Spring Messaging 6.0.12](#spring-messaging)
 
 ## Spring-beans
 
@@ -944,3 +945,7 @@ ${\color{yellow}@Temporal}$ : _@Temporal é usada para declarar o tipo de data a
 **Parâmetros:**
 
 - `value`: _Este atributo permite definir o tipo de data a ser usado para o parâmetro anotado. O valor padrão é **TemporalType.DATE**, mas você pode especificar outros valores, como **TemporalType.TIME** ou **TemporalType.TIMESTAMP**._
+
+##Spring-messaging
+
+:warning: **EM BREVE** :warning:
