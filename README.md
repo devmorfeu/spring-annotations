@@ -1018,6 +1018,220 @@ ${\color{yellow}@SubscribeMapping}$ : _@SubscribeMapping é usada para mapear me
 
 ## Spring-test
 
+${\color{yellow}@ ActiveProfiles}$ : _@ActiveProfiles é usada para declarar quais perfis de definição de beans ativos devem ser usados ao carregar um ApplicationContext._
+
+**Parâmetros:**
+
+- `value / profiles`: _Ambos os atributos permitem especificar os perfis de definição de beans ativos a serem usados no contexto de aplicativo ao executar um teste._
+- `resolver`: _Permite que você especifique uma classe que implemente a interface ActiveProfilesResolver para resolver os perfis de definição de beans ativos programaticamente._
+- `inheritProfiles`: _O valor padrão é true, o que significa que os perfis definidos em uma classe de teste se acumulam com os perfis definidos nas classes de teste superiores._
+
+${\color{yellow}@ AfterTestClass}$ : _@AfterTestClass é usada para marcar métodos que devem ser invocados após a execução de uma classe de teste no Spring Framework._
+
+**Parâmetros:**
+
+- `value`: _Expressão SpEL para que o método seja executado apenas se uma condição específica for atendida._
+
+${\color{yellow}@ AfterTestExecution}$ : _@AfterTestExecution é usada para marcar métodos que devem ser invocados após a execução de um método de teste no Spring Framework._
+
+**Parâmetros:**
+
+- `value`: _Expressão SpEL para que o método seja executado apenas se uma condição específica for atendida._
+
+${\color{yellow}@ AfterTestMethod}$ : _@AfterTestMethod é usada para marcar métodos que devem ser invocados após a execução de um método de teste no Spring Framework._
+
+**Parâmetros:**
+
+- `value`: _Expressão SpEL para que o método seja executado apenas se uma condição específica for atendida._
+
+${\color{yellow}@ AfterTransaction}$ : _@AfterTransaction usada em testes do Spring Framework para indicar que um método void anotado deve ser executado após o término de uma transação para um método de teste configurado para ser executado em uma transação, normalmente usando a anotação @Transactional do Spring._
+
+${\color{yellow}@BeforeTestClass}$ : _@BeforeTestClass é usada em testes do Spring Framework para indicar que um método void anotado deve ser executado antes que um conjunto de testes de classe seja executado._
+
+**Parâmetros:**
+
+- `value`: _Expressão SpEL para que o método seja executado apenas se uma condição específica for atendida._
+
+${\color{yellow}@BeforeTestExecution}$ : _@BeforeTestExecution é usada em testes do Spring Framework para indicar que um método void anotado deve ser executado antes que um método de teste seja executado._
+
+**Parâmetros:**
+
+- `value`: _Expressão SpEL para que o método seja executado apenas se uma condição específica for atendida._
+
+${\color{yellow}@BeforeTestMethod}$ : _@BeforeTestMethod é usada em testes do Spring Framework para indicar que um método void anotado deve ser executado antes da execução de um método de teste específico._
+
+**Parâmetros:**
+
+- `value`: _Expressão SpEL para que o método seja executado apenas se uma condição específica for atendida._
+
+${\color{yellow}@BeforeTransaction}$ : _@BeforeTransaction é usada em testes do Spring Framework para indicar que um método void anotado deve ser executado antes de uma transação ser iniciada para um método de teste configurado para ser executado dentro de uma transação, geralmente por meio da anotação @Transactional do Spring._
+
+${\color{yellow}@BootstrapWith}$ : _@BootstrapWith é usada para definir metadados em nível de classe que determinam como inicializar o "Spring TestContext Framework" durante a execução de testes._
+
+**Parâmetros:**
+
+- `value`: _Permite que você especifique a classe que implementa o TestContextBootstrapper._
+
+${\color{yellow}@Commit}$ : _@Commit é usada para definir explicitamente que a transação deve ser confirmada após o término do método de teste. Normalmente, em um ambiente de teste, as transações são revertidas para garantir que os testes sejam independentes um do outro e não afetem o estado do banco de dados._
+
+${\color{yellow}@ContextConfiguration}$ : _@ContextConfiguration é usada em testes de integração no Spring Framework para definir metadados a nível de classe que determinam como carregar e configurar um ApplicationContext para os testes._
+
+**Parâmetros:**
+
+- `value / locations`: _Especifica as localizações dos recursos que serão usados para carregar o ApplicationContext._
+- `classes`: _Especifica classes de componentes que serão usadas para configurar o ApplicationContext._
+- `initializers`: _Permite especificar inicializadores do aplicativo, que são usados para personalizar a inicialização do ApplicationContext para testes._
+- `loader`: _Define o tipo de carregador de contexto a ser usado. O carregador de contexto determina como o ApplicationContext será criado._
+- `inheritLocations`: _Controla se as configurações de localização devem ser herdadas das classes pai. Se for definido como false, o teste substituirá as configurações das classes pai._
+- `inheritInitializers`: _Controla se as configurações de inicialização devem ser herdadas das classes pai. Se for definido como false, o teste substituirá as configurações das classes pai._
+- `name`: _Define o nome do nível de hierarquia de contexto. Isso é útil ao usar @ContextHierarchy para configurar hierarquias de contextos em classes de teste aninhadas._
+
+${\color{yellow}@ContextHierarchy}$ : _@ContextHierarchy é uma anotação de nível de classe que é usada para definir uma hierarquia de ApplicationContext para testes de integração no Spring Framework. Ela permite configurar vários níveis de contexto para testes complexos que envolvem diferentes partes de um aplicativo Spring._
+
+**Parâmetros:**
+
+- `value`: _Especifica uma lista de instâncias @ContextConfiguration._
+
+${\color{yellow}@DirtiesContext}$ : _@DirtiesContext é uma anotação usada em testes do Spring Framework para indicar que o ApplicationContext associado a um teste está "sujo" e, portanto, deve ser fechado e removido do cache de contexto. Ela é usada quando um teste modifica o contexto, como alterar o estado de um bean singleton, alterar o estado de um banco de dados incorporado, etc._
+
+**Parâmetros:**
+
+- `methodMode`: _Determina o modo em que a anotação @DirtiesContext é interpretada quando usada para anotar um método de teste, sendo elas BEFORE_METHOD e AFTER_METHOD._
+- `classMode`: _Determina o modo em que a anotação @DirtiesContext é interpretada quando usada para anotar uma classe de teste, sendo elas BEFORE_CLASS, BEFORE_EACH_TEST_METHOD, AFTER_EACH_TEST_METHOD e AFTER_CLASS._
+- `hierarchyMode`: _Define o modo de limpeza do cache de contexto quando um contexto faz parte de uma hierarquia, especificada usando a anotação @ContextHierarchy._
+
+${\color{yellow}@DisabledIf}$ : _@DisabledIf é usada para desativar um teste com base na avaliação de uma expressão. Se a expressão avaliar como true, o teste será desativado, e a razão da desativação pode ser fornecida como um valor adicional. A anotação pode ser aplicada a nível de classe ou método e pode ser usada para criar anotações personalizadas para casos específicos._
+
+**Parâmetros:**
+
+- `value / expression`: _Define a expressão que será avaliada para determinar se a classe ou método de teste anotado deve ser "desativado" (disabled)._
+- `reason`: _Define o motivo pelo qual o teste está desativado._
+- `loadContext`: _Define se o ApplicationContext associado ao teste deve ser carregado antecipadamente para avaliar a expression._
+
+${\color{yellow}@DynamicPropertySource}$ : _@DynamicPropertySource é usada em métodos de integração de teste para adicionar propriedades com valores dinâmicos ao conjunto de PropertySources do ambiente (Environment)._
+
+${\color{yellow}@EnabledIf}$ : _@EnabledIf é usada para indicar que a classe de teste ou o método de teste anotado está "habilitado" (enabled) e deve ser executado se a expressão fornecida avaliar para true._
+
+**Parâmetros:**
+
+- `value / expression`: _Define a expressão que será avaliada para determinar se a classe ou método de teste anotado deve ser "desativado" (disabled)._
+- `reason`: _Define o motivo pelo qual o teste está desativado._
+- `loadContext`: _Define se o ApplicationContext associado ao teste deve ser carregado antecipadamente para avaliar a expression._
+
+${\color{yellow}@IfProfileValue}$ : _@IfProfileValue é usada com o framework de teste JUnit 4 para indicar se um teste está habilitado ou desabilitado com base em um perfil específico._
+
+**Parâmetros:**
+
+- `name`: _Definição de um nome para o valor do perfil._
+- `value`: _Usado para definir um valor específico que o perfil deve ter para que o teste seja habilitado._
+- `values`: _Permite especificar uma lista de valores possíveis para o perfil. O teste será habilitado se o valor do perfil corresponder a qualquer um dos valores na lista._
+
+${\color{yellow}@NestedTestConfiguration}$ : _@NestedTestConfiguration é usada em conjunto com o Spring TestContext Framework para configurar como as anotações de configuração de teste do Spring são processadas em classes de teste aninhadas._
+
+**Parâmetros:**
+
+- `value`: _Define os modos de herança de configuração em classes de teste aninhadas, sendo elas INHERIT e OVERRIDE._
+
+${\color{yellow}@PrepareTestInstance}$ : _@PrepareTestInstance é usada em métodos que você deseja executar como parte da preparação da instância de teste no ciclo de vida do teste._
+
+**Parâmetros:**
+
+- `value`: _Expressão SpEL para que o método seja executado apenas se uma condição específica for atendida._
+
+${\color{yellow}@ProfileValueSourceConfiguration}$ : _@ProfileValueSourceConfiguration é usada no contexto do Spring Test Framework com JUnit 4 para especificar o tipo de ProfileValueSource a ser usado ao recuperar os valores de perfil configurados por meio da anotação @IfProfileValue._
+
+**Parâmetros:**
+
+- `value`: _Implementação padrão usada é SystemProfileValueSource. Isso significa que os valores de perfil serão recuperados a partir das propriedades de sistema Java._
+
+${\color{yellow}@RecordApplicationEvents}$ : _@RecordApplicationEvents é uma anotação de nível de classe usada para instruir o "Spring TestContext Framework" a registrar todos os eventos da aplicação que são publicados no ApplicationContext durante a execução de um único teste. Isso permite que você acesse e verifique esses eventos em seus testes._
+
+${\color{yellow}@Repeat}$ : _@Repeat é usada com o framework JUnit 4 para indicar que um método de teste deve ser invocado repetidamente. Ou seja, o método de teste e qualquer configuração ou limpeza (set up e tear down) associada a ele serão executados várias vezes._
+
+**Parâmetros:**
+
+- `value`: _Número de repetições, por padrão o valir é 1._
+
+${\color{yellow}@Rollback}$ : _@Rollback é usada em testes no Spring Framework para indicar se uma transação gerenciada pelo teste deve ser revertida (rollback) após a conclusão do método de teste. Essa anotação é geralmente usada para controlar o comportamento das transações em testes de integração ou testes de unidade que envolvem transações de banco de dados._
+
+**Parâmetros:**
+
+- `value`: _Determina se a transação gerenciada pelo teste deve ser revertida (rollback) após a conclusão do método de teste, por padrão o valor é true._
+
+${\color{yellow}@SpringJUnitConfig}$ : _@SpringJUnitConfig é uma anotação composta que combina as anotações @ExtendWith(SpringExtension.class) do JUnit Jupiter com a anotação @ContextConfiguration do Spring TestContext Framework. Ela é usada para configurar classes de teste que usam o framework Spring em conjunto com o JUnit Jupiter._
+
+**Parâmetros:**
+
+- `value / locations`: _Especifica as localizações dos recursos que serão usados para carregar o ApplicationContext._
+- `classes`: _Especifica classes de componentes que serão usadas para configurar o ApplicationContext._
+- `initializers`: _Permite especificar inicializadores do aplicativo, que são usados para personalizar a inicialização do ApplicationContext para testes._
+- `loader`: _Define o tipo de carregador de contexto a ser usado. O carregador de contexto determina como o ApplicationContext será criado._
+- `inheritLocations`: _Controla se as configurações de localização devem ser herdadas das classes pai. Se for definido como false, o teste substituirá as configurações das classes pai._
+- `inheritInitializers`: _Controla se as configurações de inicialização devem ser herdadas das classes pai. Se for definido como false, o teste substituirá as configurações das classes pai._
+- `name`: _Define o nome do nível de hierarquia de contexto. Isso é útil ao usar @ContextHierarchy para configurar hierarquias de contextos em classes de teste aninhadas._
+
+${\color{yellow}@SpringJUnitWebConfig}$ : _@SpringJUnitWebConfig é uma anotação composta que combina as anotações @ExtendWith(SpringExtension.class), @ContextConfiguration, e @WebAppConfiguration. Ela é usada para configurar classes de teste que usam o framework Spring e o JUnit Jupiter em conjunto e são destinadas a testes de aplicativos da web._
+
+**Parâmetros:**
+
+- `value / locations`: _Especifica as localizações dos recursos que serão usados para carregar o ApplicationContext._
+- `classes`: _Especifica classes de componentes que serão usadas para configurar o ApplicationContext._
+- `initializers`: _Permite especificar inicializadores do aplicativo, que são usados para personalizar a inicialização do ApplicationContext para testes._
+- `loader`: _Define o tipo de carregador de contexto a ser usado. O carregador de contexto determina como o ApplicationContext será criado._
+- `inheritLocations`: _Controla se as configurações de localização devem ser herdadas das classes pai. Se for definido como false, o teste substituirá as configurações das classes pai._
+- `inheritInitializers`: _Controla se as configurações de inicialização devem ser herdadas das classes pai. Se for definido como false, o teste substituirá as configurações das classes pai._
+- `name`: _Define o nome do nível de hierarquia de contexto. Isso é útil ao usar @ContextHierarchy para configurar hierarquias de contextos em classes de teste aninhadas._
+- `resourcePath`: _Permite que você configure o local onde o aplicativo da web deve ser procurado para os testes. Se você não fornecer um valor para resourcePath(), ele usará o valor padrão "src/main/webapp"._
+
+- ${\color{yellow}@Sql}$ : _@Sql é usada para configurar scripts SQL a serem executados durante testes de integração._
+
+**Parâmetros:**
+
+- `scripts`: _Permite especificar uma lista de caminhos para scripts SQL que serão executados durante os testes de integração._
+- `statements`: _permite adicionar diretamente instruções SQL a serem executadas durante os testes. Isso pode ser útil quando você precisa executar instruções SQL específicas que não estão em arquivos separados._
+- `executionPhase`: _Determina quando os scripts e instruções SQL devem ser executados, ou seja, se eles serão executados antes ou depois do método de teste._
+- `config`: _permite configurar opções específicas para os scripts e instruções SQL nesta anotação. Você pode definir coisas como delimitadores de scripts, comportamento em caso de erros, etc._
+
+- ${\color{yellow}@SqlConfig}$ : _@SqlConfig é usada no contexto do Spring Framework para configurar metadados que determinam como os scripts SQL devem ser analisados e executados._
+
+**Parâmetros:**
+
+- `dataSource`: _Define o nome do bean do javax.sql.DataSource no qual os scripts SQL devem ser executados._
+- `transactionManager`: _Define o nome do bean do PlatformTransactionManager que deve ser usado para gerenciar as transações ao executar os scripts SQL._
+- `transactionMode`: _Define o modo de transação a ser usado ao executar os scripts SQL. O padrão é TransactionMode.DEFAULT, que usa as regras de inferência para determinar o comportamento da transação. Pode ser configurado como TransactionMode.ISOLATED para executar os scripts em uma nova transação isolada que será imediatamente confirmada._
+- `encoding`: _Define a codificação a ser usada para os scripts SQL fornecidos, se for diferente da codificação da plataforma._
+- `separator`: _Define o caractere ou sequência de caracteres que separa as instruções individuais nos scripts SQL. O padrão é ;, mas, se não estiver especificado, o mecanismo usará \n como último recurso._
+- `commentPrefix`: _Define o prefixo que identifica comentários de uma linha nos scripts SQL. O valor padrão é --._
+- `commentPrefixes`: _Uma alternativa ao commentPrefix, esse atributo permite definir uma matriz de prefixos que identificam comentários de uma linha. O valor padrão é ["--"]._
+- `blockCommentStartDelimiter`: _Define o delimitador de início que identifica comentários de bloco nos scripts SQL. O valor padrão é /*._
+- `blockCommentEndDelimiter`: _Define o delimitador de término que identifica comentários de bloco nos scripts SQL. O valor padrão é */._
+- `errorMode`: _Define o modo de tratamento de erros ao executar instruções SQL. O valor padrão é ErrorMode.DEFAULT, que segue as regras padrão. Pode ser configurado como ErrorMode.FAIL_ON_ERROR para fazer com que a execução do script falhe se ocorrer um erro, ErrorMode.CONTINUE_ON_ERROR para continuar a execução e registrar erros ou ErrorMode.IGNORE_FAILED_DROPS para ignorar erros em declarações SQL DROP._
+
+${\color{yellow}@SqlGroup}$ : _@SqlGroup é uma anotação de container que agrega várias anotações @Sql._
+
+**Parâmetros:**
+
+- `value`: _Lista de anotações @Sql._
+
+${\color{yellow}@SqlMergeMode}$ : _@SqlMergeMode é usada para configurar como as declarações de anotação @Sql em nível de classe devem ser mescladas com as declarações de anotação @Sql em nível de método em testes de integração no contexto do Spring Framework._
+
+**Parâmetros:**
+
+- `value`: _Indica se as anotações @Sql em nível de método devem ser mescladas com anotações @Sql em nível de classe ou substituí-las._
+
+${\color{yellow}@TestConstructor}$ : _@TestConstructor é usada em classes de teste para configurar como os parâmetros do construtor da classe de teste são injetados a partir dos componentes no contexto da aplicação do Spring._
+
+**Parâmetros:**
+
+- `autowireMode`: _Indica como os parâmetros do construtor do teste devem ser injetados._
+
+${\color{yellow}@TestExecutionListeners}$ : _@TestExecutionListeners é usada em classes de teste para configurar quais ouvintes de execução de teste (TestExecutionListeners) devem ser registrados com um TestContextManager. Os ouvintes de execução de teste são usados para executar ações específicas em diferentes estágios da execução de testes, como configuração, inicialização, encerramento, etc._
+
+**Parâmetros:**
+
+- `value / listeners`: _Permite que você forneça uma lista de classes que implementam a interface TestExecutionListener._
+- `mergeMode`: _Especifica como os ouvintes locais devem ser tratados em relação aos ouvintes padrão._
+- `inheritListeners`: _Define se a classe irá ou não ocultar e substituir efetivamente quaisquer ouvintes definidos por uma superclasse ou classe envolvente._
 
 
-:warning: **EM BREVE** :warning:
+:warning: **CONTINUA** :warning:
