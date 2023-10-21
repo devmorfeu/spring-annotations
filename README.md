@@ -12,6 +12,7 @@ _Este documento descreve várias anotações disponíveis no Spring Framework, o
 - [Spring Core 6.0.12](#spring-core)
 - [Spring Data JPA 3.1.5](#spring-data-jpa)
 - [Spring Messaging 6.0.12](#spring-messaging)
+- [Spring Test 6.0.12](#spring-test)
 
 ## Spring-beans
 
@@ -947,5 +948,76 @@ ${\color{yellow}@Temporal}$ : _@Temporal é usada para declarar o tipo de data a
 - `value`: _Este atributo permite definir o tipo de data a ser usado para o parâmetro anotado. O valor padrão é **TemporalType.DATE**, mas você pode especificar outros valores, como **TemporalType.TIME** ou **TemporalType.TIMESTAMP**._
 
 ## Spring-messaging
+
+${\color{yellow}@ConnectMapping}$ : _@ConnectMapping é usada para mapear a carga útil inicial ConnectionSetupPayload e subsequentes envios de metadados para um método de tratamento. Essa anotação é usada em métodos e pode ser combinada com a anotação @MessageMapping em nível de tipo para criar um padrão de rota combinado._
+
+**Parâmetros:**
+
+- `value`: _Permite especificar um ou mais padrões de rota que devem ser correspondidos à rota a partir dos metadados do ConnectionSetupPayload ou de envios subsequentes de metadados._
+
+${\color{yellow}@DestinationVariable}$ : _@DestinationVariable é usada para indicar que um parâmetro de método deve ser vinculado a uma variável de modelo em uma string de modelo de destino._
+
+**Parâmetros:**
+
+- `value`: _Permite especificar o nome da variável de modelo da qual o valor deve ser vinculado. Essa variável deve estar presente na string do modelo de destino que corresponde à mensagem sendo tratada._
+
+${\color{yellow}@Header}$ : _@Header é usada para indicar que um parâmetro de método deve ser vinculado a um cabeçalho de mensagem._
+
+**Parâmetros:**
+
+- `value / name`: _Permite especificar o nome do cabeçalho da mensagem ao qual o parâmetro do método deve ser vinculado._
+- `required`: _Determina se o cabeçalho é obrigatório. O valor padrão é true._
+- `defaultValue`: _permite especificar um valor padrão para o parâmetro do método. Se um valor padrão for especificado, ele será usado como um valor de fallback quando o cabeçalho estiver ausente na mensagem. Definir um valor padrão automaticamente define required como false._
+
+${\color{yellow}@Headers}$ : _@Headers é usada para indicar que um parâmetro de método deve ser vinculado aos cabeçalhos de uma mensagem. A principal diferença em relação à anotação @Header é que @Headers permite vincular todos os cabeçalhos da mensagem a um parâmetro do método, desde que esse parâmetro seja do tipo Map<String, Object>._
+
+${\color{yellow}@MessageExceptionHandler}$ : _@MessageExceptionHandler é usada em métodos dentro de classes de manipulação de mensagens para lidar com exceções lançadas por métodos de manipulação de mensagens._
+
+**Parâmetros:**
+
+- `value`: _Permite listar várias classes de exceção como valores para indicar que o método trata mais de um tipo de exceção._
+
+${\color{yellow}@MessageMapping}$ : _@MessageMapping é usada para mapear uma mensagem para um método de manipulação de mensagens em um controlador Spring. Ela define como as mensagens recebidas por meio de sistemas de mensagens, como STOMP sobre WebSocket e RSocket, devem ser manipuladas por um método específico._
+
+**Parâmetros:**
+
+- `value`: _Usado para definir os padrões de destino que determinam quais mensagens devem ser manipuladas pelo método anotado._
+
+${\color{yellow}@Payload}$ : _@Payload é usada para indicar que um parâmetro de método deve ser vinculado ao payload de uma mensagem em um aplicativo Spring que lida com mensagens. O payload é a parte principal da mensagem que contém os dados que você deseja processar._
+
+**Parâmetros:**
+
+- `value`: _Permite que você especifique um nome ou valor para o atributo, que é útil quando o payload é simples e não requer uma expressão._
+- `expression`: _Permite que você especifique uma expressão Spring Expression Language (SpEL) que é usada para extrair o payload._
+- `required`: _Especifica se o payload é obrigatório ou não. Se definido como true (o valor padrão), um erro será gerado se não houver payload na mensagem._
+
+${\color{yellow}@RSocketExchange}$ : _@RSocketExchange é usada para declarar um método em uma interface de serviço RSocket como um ponto de extremidade RSocket. Essa anotação permite especificar o roteamento do ponto de extremidade com base no atributo da anotação e nos argumentos do método._
+
+**Parâmetros:**
+
+- `value`: _Este atributo é usado para especificar o mapeamento de destino do ponto de extremidade._
+
+${\color{yellow}@SendTo}$ : _@SendTo é usada para indicar que o valor de retorno de um método deve ser convertido em uma mensagem (do tipo Message) se necessário e enviada para o destino especificado. Essa anotação é comumente usada em cenários de comunicação assíncrona, onde um método pode gerar uma resposta que é enviada para um destino específico._
+
+**Parâmetros:**
+
+- `value`: _Especifica o destino para o qual a mensagem criada a partir do valor de retorno do método deve ser enviada._
+
+${\color{yellow}@SendToUser}$ : _@SendToUser é usada para indicar que o valor de retorno de um método deve ser convertido em uma mensagem (do tipo Message) e enviada para um ou mais destinos. A diferença principal entre @SendTo e @SendToUser é que a última adiciona um prefixo "/user/{username}" ao destino especificado. Além disso, @SendToUser é frequentemente usada em sistemas de mensagens onde as mensagens são direcionadas para usuários específicos._
+
+**Parâmetros:**
+
+- `value / destinations`: _Estes atributos especificam um ou mais destinos para os quais a mensagem criada a partir do valor de retorno do método deve ser enviada. Se especificado, o prefixo "/user/{username}" é adicionado a cada destino._
+- `broadcast`: _Controla se as mensagens devem ser enviadas para todas as sessões associadas ao usuário (true) ou apenas para a sessão da mensagem de entrada sendo manipulada (false)._
+
+${\color{yellow}@SubscribeMapping}$ : _@SubscribeMapping é usada para mapear mensagens de assinatura (subscription messages) para métodos de manipulação com base no destino da assinatura. Ela é amplamente usada em sistemas que suportam o protocolo STOMP (Streaming Text Oriented Messaging Protocol) sobre WebSocket, como parte da arquitetura de mensagens em tempo real._
+
+**Parâmetros:**
+
+- `value`: _Especifica o destino da mensagem de assinatura. A mensagem de assinatura é aquela em que um cliente se inscreve para receber atualizações em um determinado destino. O destino pode ser especificado como uma string. Você pode usar padrões estilo Ant (por exemplo, "/price.stock.*") ou variáveis de modelo de caminho (por exemplo, "/price.stock.{ticker}") no destino para fazer corresponder várias assinaturas a um único método._
+
+## Spring-test
+
+
 
 :warning: **EM BREVE** :warning:
