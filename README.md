@@ -13,6 +13,7 @@ _Este documento descreve várias anotações disponíveis no Spring Framework, o
 - [Spring Data JPA 3.1.5](#spring-data-jpa)
 - [Spring Messaging 6.0.12](#spring-messaging)
 - [Spring Test 6.0.12](#spring-test)
+- [Spring Web 6.0.12](#spring-web)
 
 ## Spring-beans
 
@@ -1233,5 +1234,33 @@ ${\color{yellow}@TestExecutionListeners}$ : _@TestExecutionListeners é usada em
 - `mergeMode`: _Especifica como os ouvintes locais devem ser tratados em relação aos ouvintes padrão._
 - `inheritListeners`: _Define se a classe irá ou não ocultar e substituir efetivamente quaisquer ouvintes definidos por uma superclasse ou classe envolvente._
 
+${\color{yellow}@TestPropertySource}$ : _@TestPropertySource é usada em testes de integração no contexto do Spring Framework para configurar a carga de propriedades a serem adicionadas ao ambiente (Environment) do aplicativo durante a execução dos testes._
 
-:warning: **CONTINUA** :warning:
+**Parâmetros:**
+
+- `value / locations`: _Especifica as localizações dos arquivos de propriedades a serem carregados no ambiente durante a execução dos testes._
+- `inheritLocations`: _Define se as localizações definidas em superclasses ou classes contendo essa anotação devem ser herdadas._
+- `properties`: _Permite definir propriedades in-line como pares chave-valor para serem adicionados ao ambiente de teste antes da inicialização do contexto do aplicativo._
+- `inheritProperties`: _Define se as propriedades in-line definidas em superclasses ou classes contendo essa anotação devem ser herdadas._
+
+${\color{yellow}@TestPropertySources}$ : _@TestPropertySources é um container para uma ou mais declarações de @TestPropertySource. Seu propósito é agrupar várias fontes de propriedades em um único lugar._
+
+**Parâmetros:**
+
+- `value`: _Este atributo permite especificar uma matriz de uma ou mais declarações de @TestPropertySource._
+
+${\color{yellow}@Timed}$ : _@Timed é uma anotação de teste que pode ser usada com o framework JUnit 4 para indicar que um método de teste deve ser concluído dentro de um período de tempo especificado._
+
+**Parâmetros:**
+
+- `millis`: _Define o período de tempo máximo (em milissegundos) que a execução do teste pode levar antes de ser marcada como falha devido a um tempo limite excedido._
+
+${\color{yellow}@WebAppConfiguration}$ : _@WebAppConfiguration é uma anotação de nível de classe usada para declarar que o ApplicationContext carregado para um teste de integração deve ser um WebApplicationContext._
+
+**Parâmetros:**
+
+- `value`: _Este atributo permite especificar o caminho para o diretório raiz da aplicação da web. O contexto da web é uma parte importante de muitas aplicações da web Spring e é necessário para testar funcionalidades relacionadas à web._
+
+## Spring-web
+
+:warning: **EM BREVE** :warning:
