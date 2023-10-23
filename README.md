@@ -3,7 +3,7 @@
 
 # Anotações do Framework Spring
 
-_Este documento descreve várias anotações disponíveis no Spring Framework, organizadas por módulos em ordem alfabética._
+_Este documento descreve várias anotações disponíveis no Spring ‘Framework’, organizadas por módulos em ordem alfabética._
 
 ## Índice
 
@@ -20,7 +20,7 @@ _Este documento descreve várias anotações disponíveis no Spring Framework, o
 
 ## Spring-beans
 
-${\color{yellow}@ Autowired}$ : _@Autowired é usada em Spring Framework para indicar que uma dependência deve ser automaticamente injetada. Ela pode ser usada em construtores, campos, métodos ou parâmetros._
+${\color{yellow}@ Autowired}$ : _@Autowired é usada em Spring ‘Framework’ para indicar que uma dependência deve ser automaticamente injetada. Ela pode ser usada em construtores, campos, métodos ou parâmetros._
 
 **Parâmetros:**
 
@@ -102,8 +102,8 @@ ${\color{yellow}@ConditionalOnBean}$ : _@ConditionalOnBean é uma anotação do 
 - `type`: _Especifica os nomes de classes de beans cuja presença no contexto da aplicação será verificada._
 - `annotation`: _Especifica os tipos de anotações de classe que decoram os beans a serem verificados._
 - `name`: _Especifica os nomes de beans cuja presença no contexto da aplicação será verificada._
-- `search`: _Define a estratégia de pesquisa para determinar se o contexto de aplicação hierárquico (contextos pai) deve ser considerado._
-- `parameterizedContainer`: _Especifica classes adicionais que podem conter tipos de beans específicos em seus parâmetros genéricos._
+- `search`: _Define a estratégia de pesquisa para determinar se o contexto de aplicação hierárquico (contexto pai) deve ser considerado._
+- `parameterizedContainer`: _Especifica classes adicionais que podem conter tipos de beans específicos nos seus parâmetros genéricos._
 
 ${\color{yellow}@ConditionalOnClass}$ : _@ConditionalOnClass é uma anotação do Spring Boot que condiciona a ativação de um componente somente se uma ou mais classes especificadas estiverem presentes no classpath da aplicação. Isso permite controlar a inicialização de componentes com base na disponibilidade de classes._
 
@@ -122,7 +122,7 @@ ${\color{yellow}@ConditionalOnDefaultWebSecurity}$ : _@ConditionalOnDefaultWebSe
 
 ${\color{yellow}@ConditionalOnEnabledResourceChain}$ : _@ConditionalOnEnabledResourceChain é uma anotação de condição usada no Spring Boot para verificar se a cadeia de recursos (Resource Chain) está habilitada na aplicação, permitindo a personalização de recursos, como arquivos estáticos e cache, em aplicativos da web. Isso permite a configuração avançada de recursos, como otimização de cache e versão de recursos._
 
-${\color{yellow}@ConditionalOnExpression}$ : _@ConditionalOnExpression é uma anotação do Spring Boot que condiciona a ativação de um componente com base em uma expressão SpEL (Spring Expression Language) avaliada em tempo de execução, permitindo ativar componentes com base em regras lógicas definidas na expressão._
+${\color{yellow}@ConditionalOnExpression}$ : _@ConditionalOnExpression é uma anotação do Spring Boot que condiciona a ativação de um componente com base numa expressão SpEL (Spring Expression Language) avaliada em tempo de execução, permitindo ativar componentes com base em regras lógicas definidas na expressão._
 
 **Parâmetros:**
 
@@ -154,7 +154,7 @@ ${\color{yellow}@ConditionalOnMissingBean}$ : _@ConditionalOnMissingBean é uma 
 - `annotation`: _Especifica as anotações de nível de classe a serem verificadas quanto à ausência._
 - `name`: _Define os nomes de beans a serem verificados quanto à ausência._
 - `search`: _Estratégia para considerar a hierarquia do contexto da aplicação._
-- `parameterizedContainer`: _Classes adicionais que podem conter os tipos de beans especificados em seus parâmetros genéricos (desde a versão 2.1.0)._
+- `parameterizedContainer`: _Classes adicionais que podem conter os tipos de beans especificados nos seus parâmetros genéricos (desde a versão 2.1.0)._
 
 ${\color{yellow}@ConditionalOnMissingClass}$ : _@ConditionalOnMissingClass é uma anotação do Spring Boot que ativa um componente somente se uma ou mais classes especificadas não estiverem presentes no classpath._
 
@@ -164,7 +164,7 @@ ${\color{yellow}@ConditionalOnMissingClass}$ : _@ConditionalOnMissingClass é um
 
 ${\color{yellow}@ConditionalOnMissingFilterBean}$ : _@ConditionalOnMissingFilterBean é uma anotação de condição no Spring Boot que verifica se não existe um bean de filtro específico no contexto da aplicação. Isso permite personalizar a configuração de filtros, garantindo que um filtro personalizado seja aplicado apenas se nenhum filtro com o mesmo nome estiver presente._
 
-${\color{yellow}@ConditionalOnNotWarDeployment}$ : _@ConditionalOnMissingClass ativa um componente somente se o app Spring não estiver sendo implantado como um arquivo **WAR**._
+${\color{yellow}@ConditionalOnNotWarDeployment}$ : _@ConditionalOnMissingClass ativa um componente somente se o app Spring não estiver a ser implantado como um arquivo **WAR**._
 
 ${\color{yellow}@ConditionalOnNotWebApplication}$ : _@ConditionalOnNotWebApplication ativa um componente somente se o app Spring não for uma aplicação da web._
 
@@ -290,11 +290,11 @@ ${\color{yellow}@JsonComponent}$ : _@JsonComponent é uma anotação do Spring B
 
 **Parâmetros:**
 
-- `value`: _Indica um nome lógico sugerido para o componente e pode ser convertido em um **bean**. Padrão é uma string vazia._
+- `value`: _Indica um nome lógico sugerido para o componente e pode ser convertido em um **bean**. Padrão é uma ‘string’ vazia._
 - `type`: _Define os tipos que o componente manipula para serialização/desserialização. Essa configuração é especialmente importante para deserializadores de chaves (**KeyDeserializer**) e pode ser usada para limitar o tratamento a subclasses de tipos inferidos._
 - `scope`: _Especifica o escopo sob o qual o serializador/desserializador deve ser registrado com o módulo. O valor padrão é **Scope.VALUES**, que se aplica a serializadores/desserializadores de conteúdo de valor. O escopo **Scope.KEYS** pode ser usado para serializadores/desserializadores de chaves._
 
-${\color{yellow}@JsonMixin}$ : _@JsonMixin é uma anotação que permite criar uma classe que define anotações personalizadas para controlar a forma como objetos são convertidos em JSON ou de JSON para objetos, aplicando essas anotações a classes específicas. Isso facilita a personalização da serialização e desserialização JSON._
+${\color{yellow}@JsonMixin}$ : _@JsonMixin é uma anotação que permite criar uma classe que define anotações personalizadas para controlar como objetos são convertidos em JSON ou de JSON para objetos, aplicando essas anotações a classes específicas. Isso facilita a personalização da serialização e desserialização JSON._
 
 **Parâmetros:**
 
@@ -324,7 +324,7 @@ ${\color{yellow}@PeriodUnit}$ : _@PeriodUnit é uma anotação do Spring Boot qu
 
 - `value`: _A unidade de período a ser usada se nenhuma for especificada._
 
-${\color{yellow}@QuartzDataSource}$ : _@QuartzDataSource anotação de um DataSource a ser injetado na configuração automática do Quartz. Pode ser usado em uma fonte de dados secundária, caso exista outra marcada como @Primary._
+${\color{yellow}@QuartzDataSource}$ : _@QuartzDataSource anotação de um DataSource a ser injetado na configuração automática do Quartz. Pode ser usado numa fonte de dados secundária, caso exista outra marcada como @Primary._
 
 ${\color{yellow}@QuartzTransactionManager}$ : _@QuartzTransactionManager anotação de TransactionManager a ser injetado na configuração automática do Quartz. Pode ser utilizado em um gerenciador de transações secundário, caso exista outro marcado como @Primary._
 
@@ -385,8 +385,8 @@ ${\color{yellow}@SqsListener}$ : _@SqsListener é usada para configurar métodos
 - `value \ queueNames`: _Especifica os nomes das filas ou URLs que serão ouvidos por este método. Você pode definir uma ou mais filas separadas por vírgulas para que o método processe mensagens de várias filas._
 - `factory`: _Permite especificar o nome de um bean que será usado para criar o MessageListenerContainer para lidar com esse endpoint. É útil se você deseja usar uma configuração personalizada para o contêiner. Por padrão, ele procurará um bean adequado no contexto._
 - `id`: _Define um identificador para o MessageListenerContainer criado para lidar com esse endpoint. Se você não fornecer um, um identificador padrão será gerado automaticamente._
-- `maxConcurrentMessages`: _Define o número máximo de mensagens que podem ser processadas simultaneamente para cada fila. Isso controla quantas mensagens seu método pode lidar de uma só vez._
-- `pollTimeoutSeconds`: _Especifica o tempo máximo em segundos que o método aguardará por mensagens em uma chamada de busca ao SQS._
+- `maxConcurrentMessages`: _Define o número máximo de mensagens que podem ser processadas simultaneamente para cada fila. Isso controla quantas mensagens o seu método pode lidar de uma só vez._
+- `pollTimeoutSeconds`: _Especifica o tempo máximo em segundos que o método aguardará por mensagens numa chamada busca ao SQS._
 - `maxMessagesPerPoll`: _Define o número máximo de mensagens que podem ser buscadas de uma só vez. Esse valor é útil ao trabalhar com filas SQS com mensagens agrupadas._
 - `messageVisibilitySeconds`: _Controla o tempo de visibilidade das mensagens. Isso define quanto tempo as mensagens serão invisíveis após serem recebidas. Isso é útil para garantir que as mensagens não sejam processadas por vários consumidores ao mesmo tempo._
 
@@ -472,7 +472,7 @@ ${\color{yellow}@CacheConfig}$ : _@CacheConfig é usada para definir configuraç
 - `cacheManager`: _Permite especificar o nome de um CacheManager personalizado que será usado para criar um **CacheResolver** padrão se nenhum estiver configurado._
 - `cacheResolver`: _Permite especificar o nome de um **CacheResolver** personalizado que será usado para determinar o cache para a invocação do método._
 
-${\color{yellow}@CacheEvict}$ : _@CacheEvict é usada para indicar que um método ou todos os métodos em uma classe acionam operações de esvaziamento da cache._
+${\color{yellow}@CacheEvict}$ : _@CacheEvict é usada para indicar que um método ou todos os métodos numa classe acionam operações de esvaziamento da cache._
 
 **Parâmetros:**
 
@@ -485,7 +485,7 @@ ${\color{yellow}@CacheEvict}$ : _@CacheEvict é usada para indicar que um métod
 - `unless`: _Especifica se todas as entradas dentro do cache devem ser removidas._
 - `beforeInvocation`: _Especifica se a operação de esvaziamento da cache deve ocorrer antes da invocação do método._
 
-${\color{yellow}@CachePut}$ : _@CachePut é usada para indicar que um método ou todos os métodos em uma classe acionam operações de armazenamento em cache, que armazenam os resultados do método nas caches especificadas._
+${\color{yellow}@CachePut}$ : _@CachePut é usada para indicar que um método ou todos os métodos numa classe acionam operações de armazenamento em cache, que armazenam os resultados do método nas caches especificadas._
 
 **Parâmetros:**
 
@@ -504,7 +504,7 @@ ${\color{yellow}@Caching}$ : _@Caching é uma anotação de agrupamento para vá
 - `put`: _Permite que você especifique uma ou mais anotações @CachePut que descrevem as operações de cache de gravação (ou seja, quando um valor é armazenado em uma cache)._
 - `evict`: _Permite que você especifique uma ou mais anotações @CacheEvict que descrevem as operações de evicção de cache (ou seja, quando um valor é removido de uma cache)._
 
-${\color{yellow}@Component}$ : _@Component é uma anotação do Spring Framework que indica que uma classe anotada é um "componente". Os componentes são considerados candidatos para detecção automática quando se utiliza configuração baseada em anotações e digitalização do classpath._
+${\color{yellow}@Component}$ : _@Component é uma anotação do Spring ‘Framework’ que indica que uma classe anotada é um "componente". Os componentes são considerados candidatos para detecção automática quando se utiliza configuração baseada em anotações e digitalização do classpath._
 
 **Parâmetros:**
 
@@ -572,7 +572,7 @@ ${\color{yellow}@EnableAsync}$ : _@EnableAsync é usada no Spring Framework para
 **Parâmetros:**
 
 - `annotation`: _Permite indicar o tipo de anotação de "async" que deve ser detectada em nível de classe ou método. Por padrão, o Spring detectará tanto a anotação @Async do Spring._
-- `proxyTargetClass`: _Controla se proxies baseados em classes (CGLIB) devem ser criados em oposição a proxies baseados em interfaces padrão do Java._
+- `proxyTargetClass`: _Controla se proxies baseados em classes (CGLIB) devem ser criados em oposição a proxies baseados em ‘interfaces’ padrão do Java._
 - `mode`: _Indica como o conselho assíncrono deve ser aplicado. O padrão é AdviceMode.PROXY, que permite a interceptação de chamadas por meio do proxy._
 - `order`: _Controla a ordem em que o AsyncAnnotationBeanPostProcessor deve ser aplicado. O padrão é **Ordered.LOWEST_PRECEDENCE**._
 
@@ -580,14 +580,14 @@ ${\color{yellow}@EnableAspectJAutoProxy}$ : _@EnableAspectJAutoProxy é usada pa
 
 **Parâmetros:**
 
-- `proxyTargetClass`: _Controla se proxies baseados em classes (CGLIB) devem ser criados em oposição a proxies baseados em interfaces padrão do Java._
-- `exposeProxy`: _Indica se o proxy deve ser exposto pelo framework AOP como um ThreadLocal para recuperação por meio da classe AopContext do Spring._
+- `proxyTargetClass`: _Controla se proxies baseados em classes (CGLIB) devem ser criados em oposição a proxies baseados em ‘interfaces’ padrão do Java._
+- `exposeProxy`: _Indica se o proxy deve ser exposto pelo ‘framework’ AOP como um ThreadLocal para recuperação por meio da classe AopContext do Spring._
 
-${\color{yellow}@EnableCaching}$ : _@EnableCaching é usada para habilitar o suporte ao gerenciamento de cache baseado em anotações no Spring._
+${\color{yellow}@EnableCaching}$ : _@EnableCaching é usada para habilitar o suporte à gestão de cache baseado em anotações no Spring._
 
 **Parâmetros:**
 
-- `proxyTargetClass`: _Controla se proxies baseados em classes (CGLIB) devem ser criados em oposição a proxies baseados em interfaces padrão do Java._
+- `proxyTargetClass`: _Controla se proxies baseados em classes (CGLIB) devem ser criados em oposição a proxies baseados em ‘interfaces’ padrão do Java._
 - `mode`: _Indica como o conselho assíncrono deve ser aplicado. O padrão é AdviceMode.PROXY, que permite a interceptação de chamadas por meio do proxy._
 - `order`: _Indica como o aconselhamento de cache deve ser aplicado. O padrão é AdviceMode.PROXY._
 
@@ -597,7 +597,7 @@ ${\color{yellow}@EnableLoadTimeWeaving}$ : _@EnableLoadTimeWeaving é usada para
 
 - `aspectjWeaving`: _Controla se a tecelagem AspectJ deve ser ativada. Os valores possíveis para aspectjWeaving são: **AspectJWeaving.ENABLED**, **AspectJWeaving.DISABLED**, **AspectJWeaving.AUTODETECT**_
 
-${\color{yellow}@EnableMBeanExport}$ : _@EnableMBeanExport é usada para habilitar a exportação de MBeans (Managed Beans) em um contexto Spring, facilitando a exposição de beans gerenciados como MBeans em um servidor JMX (Java Management Extensions). Isso permite monitorar e gerenciar esses beans usando ferramentas de gerenciamento JMX._
+${\color{yellow}@EnableMBeanExport}$ : _@EnableMBeanExport é usada para habilitar a exportação de MBeans (Managed Beans) num contexto Spring, facilitando a exposição de beans gerenciados como MBeans em um servidor JMX (Java Management Extensions). Isso permite monitorar e gerenciar esses beans usando ferramentas de gerenciamento JMX._
 
 **Parâmetros:**
 
@@ -607,13 +607,13 @@ ${\color{yellow}@EnableMBeanExport}$ : _@EnableMBeanExport é usada para habilit
 
 ${\color{yellow}@EnableScheduling}$ : _@EnableScheduling é usada em classes de configuração do Spring para habilitar a capacidade de execução de tarefas agendadas. Essas tarefas agendadas são definidas por meio de anotações @Scheduled._
 
-${\color{yellow}@EventListener}$ : _@EventListener é usada no Spring Framework para marcar um método como um ouvinte de eventos da aplicação. Esse método será invocado quando o evento especificado ocorrer._
+${\color{yellow}@EventListener}$ : _@EventListener é usada no Spring ‘Framework’ para marcar um método como um ouvinte de eventos da aplicação. Esse método será invocado quando o evento especificado ocorrer._
 
 **Parâmetros:**
 
 - `value / classes`: _Especificar os tipos de eventos que o ouvinte deve manipular._
 - `condition`: _Este atributo permite que você especifique uma expressão Spring Expression Language (SpEL) que controla condicionalmente se o método do ouvinte é chamado._
-- `id`: _A partir do Spring 5.3.5, você pode usar o atributo id para especificar um identificador exclusivo para o ouvinte. Isso é útil quando você precisa identificar ou remover o ouvinte posteriormente._
+- `id`: _A partir do Spring 5.3.5, você pode usar o atributo ‘id’ para especificar um identificador exclusivo para o ouvinte. Isso é útil quando você precisa identificar ou remover o ouvinte posteriormente._
 
 ${\color{yellow}@Import}$ : _@Import é usada para importar um ou mais componentes no contexto de aplicação._
 
@@ -621,14 +621,14 @@ ${\color{yellow}@Import}$ : _@Import é usada para importar um ou mais component
 
 - `value`: _@Configuration, ImportSelector, ImportBeanDefinitionRegistrar ou classes de componentes regulares para importar._
 
-${\color{yellow}@ImportResource}$ : _@ImportResource é usada no Spring Framework para importar definições de beans de recursos externos, como arquivos XML de configuração, para o contexto de aplicação. É semelhante à anotação @Import, mas é usada para importar recursos externos, enquanto @Import é usada para importar classes de configuração e outros componentes._
+${\color{yellow}@ImportResource}$ : _@ImportResource é usada no Spring ‘Framework’ para importar definições de beans de recursos externos, como arquivos XML de configuração, para o contexto de aplicação. É semelhante à anotação @Import, mas é usada para importar recursos externos, enquanto @Import é usada para importar classes de configuração e outros componentes._
 
 **Parâmetros:**
 
 - `locations`: _Pode usar os prefixos de carregamento de recursos, como classpath:, file:, etc._
 - `reader`: _Você pode substituir o leitor padrão **BeanDefinitionReader**._
 
-${\color{yellow}@ImportRuntimeHints}$ : _@ImportRuntimeHints é usada no contexto do Spring Framework para indicar que uma ou mais implementações da interface RuntimeHintsRegistrar devem ser processadas._
+${\color{yellow}@ImportRuntimeHints}$ : _@ImportRuntimeHints é usada no contexto do Spring ‘Framework’ para indicar que uma ou mais implementações da ‘interface’ RuntimeHintsRegistrar devem ser processadas._
 
 **Parâmetros:**
 
@@ -659,19 +659,19 @@ ${\color{yellow}@ManagedMetric}$ : _@ManagedMetric é usada para indicar que um 
 - `category`: _Especifica a categoria à qual a métrica pertence. Pode ser usado para organizar as métricas em grupos relacionados._
 - `currencyTimeLimit`: _Controla a duração de tempo em que o valor do atributo permanece válido._
 - `description`: _Permite fornecer uma descrição da métrica, explicando o que ela representa._
-- `displayName`: _Especifica um nome amigável para a métrica que pode ser exibido em ferramentas de gerenciamento e monitoramento._
+- `displayName`: _Especifica um nome amigável para a métrica que pode ser exibido em ferramentas de gestão e monitoramento._
 - `metricType`: _Define o tipo da métrica, que pode ser um dos seguintes: **MetricType.GAUGE** e **MetricType.COUNTER**._
 - `persistPeriod`: _Controla a frequência com que o valor do atributo é persistido._
 - `persistPolicy`: _Usado para indicar como o valor do atributo deve ser persistido._
 - `unit`: _Define a unidade da métrica, indicando qual é a unidade de medida dos valores da métrica, como "bytes," "milissegundos," "solicitações," etc._
 
-${\color{yellow}@ManagedNotification}$ : _@ManagedNotification é usada para indicar que um bean em um aplicativo JMX emite notificações JMX. Notificações JMX são mensagens que um bean envia para notificar eventos ou mudanças de estado._
+${\color{yellow}@ManagedNotification}$ : _@ManagedNotification é usada para indicar que um bean num aplicativo JMX emite notificações JMX. Notificações JMX são mensagens que um bean envia para notificar eventos ou mudanças de estado._
 
 **Parâmetros:**
 
 - `name`: _Especifica o nome da notificação JMX. O nome deve ser exclusivo dentro do contexto JMX. É usado para identificar a notificação e, portanto, deve ser exclusivo para evitar conflitos._
 - `description`: _Permite fornecer uma descrição da métrica, explicando o que ela representa._
-- `notificationTypes`: _Especifica os tipos de notificação que podem ser gerados por esta notificação. Os tipos de notificação são strings que descrevem o tipo da notificação, como "error," "warning," "info," etc. Uma notificação pode ter vários tipos._
+- `notificationTypes`: _Especifica os tipos de notificação que podem ser gerados por esta notificação. Os tipos de notificação são ‘strings’ que descrevem o tipo da notificação, como "error," "warning," "info," etc. Uma notificação pode ter vários tipos._
 
 ${\color{yellow}@ManagedNotifications}$ : _@ManagedNotifications é um container de nível de tipo usada para agrupar uma ou mais declarações da anotação @ManagedNotification._
 
@@ -761,14 +761,14 @@ ${\color{yellow}@Role}$ : _@Role é usada para indicar o "papel" (role) de um be
 
 - `value`: _Permite especificar um valor inteiro que representa o papel do bean no contexto da aplicação._
 
-${\color{yellow}@Scope}$ : _@Scope é usada para definir o escopo de uma instância gerenciada pelo Spring, o que afeta a vida útil da instância e como ela é compartilhada ou criada._
+${\color{yellow}@Scope}$ : _@Scope é usada para definir o escopo de uma instância gerenciada pelo Spring, afetando a vida útil da instância e como ela é compartilhada ou criada._
 
 **Parâmetros:**
 
 - `scopeName`: _Permite especificar o nome do escopo a ser usado para as instâncias do tipo anotado. O escopo se refere à vida útil da instância do bean._
 - `proxyMode`: _Permite especificar se o componente deve ser configurado como um proxy de escopo._
 
-${\color{yellow}@Scheduled}$ : _@Scheduled é usada no Spring Framework para agendar a execução de um método de maneira programada._
+${\color{yellow}@Scheduled}$ : _@Scheduled é usada no Spring ‘Framework’ para agendar a execução de um método de maneira programada._
 
 **Parâmetros:**
 
@@ -777,10 +777,10 @@ ${\color{yellow}@Scheduled}$ : _@Scheduled é usada no Spring Framework para age
 - `fixedRate`: _Define um intervalo fixo entre invocações consecutivas do método agendado, independentemente de quando o método anterior terminou. O intervalo é especificado em milissegundos._
 - `initialDelay`: _Define um atraso inicial antes da primeira invocação do método agendado. O atraso é especificado em milissegundos._
 - `zone`: _Especifica a zona de tempo na qual a expressão cron deve ser avaliada. Por padrão, ele usa a zona de tempo do servidor._
-- `fixedDelayString / fixedRateString / initialDelayString`: _Versões alternativas dos atributos acima que permitem usar valores de string, incluindo suporte a expressões SpEL._
+- `fixedDelayString / fixedRateString / initialDelayString`: _Versões alternativas dos atributos acima que permitem usar valores de ‘string’, incluindo suporte a expressões SpEL._
 - `timeUnit`: _Permite especificar a unidade de tempo para os atributos fixedDelay, fixedRate, initialDelay, fixedDelayString, fixedRateString e initialDelayString._
 
-${\color{yellow}@Schedules}$ : _@Schedules é uma anotação de contêiner que permite agrupar várias anotações @Scheduled em um único local._
+${\color{yellow}@Schedules}$ : _@Schedules é uma anotação de contêiner que permite agrupar várias anotações @Scheduled num único local._
 
 **Parâmetros:**
 
@@ -811,17 +811,17 @@ ${\color{yellow}@Instantiator}$ : _@Instantiator é usada para indicar que a cla
 
 **Parâmetros:**
 
-- `value`: _Usado para especificar o tipo de instantiator que a classe representa que são **STANDARD**, **SERIALIZATION**, **NOT_COMPLIANT** e **UNKNOWN**._
+- `value`: _Usado para especificar o tipo de instantiator que a classe representa, sendo: **STANDARD**, **SERIALIZATION**, **NOT_COMPLIANT** e **UNKNOWN**._
 
-${\color{yellow}@NonNull}$ : _@NonNull é uma anotação do Spring Framework usada para declarar que os elementos anotados não podem ser nulos._
+${\color{yellow}@NonNull}$ : _@NonNull é uma anotação do Spring ‘Framework’ usada para declarar que os elementos anotados não podem ser nulos._
 
-${\color{yellow}@NonNullApi}$ : _@NonNullApi é usada no Spring Framework para declarar que, por padrão, os parâmetros e valores de retorno devem ser considerados como não nulos em um determinado pacote._
+${\color{yellow}@NonNullApi}$ : _@NonNullApi é usada no Spring ‘Framework’ para declarar que, por padrão, os parâmetros e valores de retorno devem ser considerados não nulos num determinado pacote._
 
-${\color{yellow}@NonNullFields}$ : _@NonNullFields é usada no Spring Framework para declarar que, por padrão, os campos (fields) em uma determinada classe ou pacote devem ser considerados como não nulos._
+${\color{yellow}@NonNullFields}$ : _@NonNullFields é usada no Spring ‘Framework’ para declarar que, por padrão, os campos (fields) numa determinada classe ou pacote devem ser considerados não nulos._
 
-${\color{yellow}@Nullable}$ : _@Nullable é uma anotação do Spring Framework usada para declarar que os elementos anotados podem ser nulos em algumas circunstâncias._
+${\color{yellow}@Nullable}$ : _@Nullable é uma anotação do Spring ‘Framework’ usada para declarar que os elementos anotados podem ser nulos em algumas circunstâncias._
 
-${\color{yellow}@Order}$ : _@Order é usada no Spring Framework para definir a ordem de classificação de um componente anotado._
+${\color{yellow}@Order}$ : _@Order é usada no Spring ‘Framework’ para definir a ordem de classificação de um componente anotado._
 
 **Parâmetros:**
 
@@ -856,10 +856,10 @@ ${\color{yellow}@EnableEnversRepositories}$ : _@EnableEnversRepositories é usad
 - `namedQueriesLocation`: _Usado para configurar a localização do arquivo de propriedades que contém as consultas nomeadas (named queries) para os repositórios. Por padrão, se esse atributo não for especificado, a localização padrão será META-INF/jpa-named-queries.properties._
 - `queryLookupStrategy`: _Usado para configurar o mecanismo de busca de estratégia de consulta para os métodos de consulta dos seus repositórios. Por padrão, se esse atributo não for especificado, a estratégia padrão é Key.CREATE_IF_NOT_FOUND._
 - `repositoryFactoryBeanClass`: _Usado para configurar a classe FactoryBean que será usada para criar instâncias de repositórios. Por padrão, se esse atributo não for especificado, a classe JpaRepositoryFactoryBean é usada como a classe de fábrica. Essa classe é responsável por criar proxies para os seus repositórios e gerenciar a injeção de dependência._
-- `repositoryBaseClass`: _Usado para configurar a classe base dos repositórios a serem criados para uma configuração específica. A classe base dos repositórios é a interface que estende a interface JpaRepository e é usada como base para criar instâncias de repositórios._
+- `repositoryBaseClass`: _Usado para configurar a classe base dos repositórios a serem criados para uma configuração específica. A classe base dos repositórios é a ‘interface’ que estende a ‘interface’ JpaRepository e é usada como base para criar instâncias de repositórios._
 - `entityManagerFactoryRef`: _Usado para configurar o nome da definição de bean do EntityManagerFactory que deve ser usado para criar os repositórios descobertos por meio dessa anotação. Por padrão, o nome da definição de bean do EntityManagerFactory é "entityManagerFactory"._
 - `transactionManagerRef`: _Usado para configurar o nome da definição de bean do PlatformTransactionManager que deve ser usado para criar os repositórios descobertos por meio dessa anotação. Por padrão, o nome da definição de bean do PlatformTransactionManager é "transactionManager"._
-- `considerNestedRepositories`: _Usado para configurar se as interfaces de repositório aninhadas (por exemplo, definidas como classes internas) devem ser descobertas pela infraestrutura de repositórios. Por padrão, essa configuração é definida como false, o que significa que as interfaces de repositório aninhadas não são consideradas na descoberta de repositórios._
+- `considerNestedRepositories`: _Usado para configurar se as ‘interfaces’ de repositório aninhadas (por exemplo, definidas como classes internas) devem ser descobertas pela infraestrutura de repositórios. Por padrão, essa configuração é definida como false, o que significa que as interfaces de repositório aninhadas não são consideradas na descoberta de repositórios._
 - `enableDefaultTransactions`: _ Usado para configurar se as transações padrão devem ser habilitadas para os repositórios Spring Data JPA. A configuração padrão é true, o que significa que as transações padrão estão habilitadas. Quando as transações padrão estão habilitadas, as operações realizadas nos métodos dos repositórios JPA são automaticamente envolvidas em transações gerenciadas pelo Spring, garantindo a consistência dos dados._
 - `bootstrapMode`: _Usado para configurar quando os repositórios são inicializados durante o ciclo de vida de inicialização do aplicativo. Isso é relevante ao usar o Spring Data JPA e a anotação @EnableEnversRepositories em uma configuração._
 - `escapeCharacter`: _Usado para configurar o caractere usado para escapar os caracteres curinga, como _ e %, em consultas derivadas no Spring Data JPA. Em consultas derivadas, você pode usar curingas para correspondência parcial de strings, mas, em alguns casos, você pode querer pesquisar literais que contêm esses caracteres curinga como parte da string em si._
@@ -868,12 +868,12 @@ ${\color{yellow}@EnableJpaAuditing}$ : _@EnableJpaAuditing é usada para habilit
 
 **Parâmetros:**
 
-- `auditorAwareRef`: _Este atributo permite configurar o nome do bean que implementa a interface AuditorAware. Um AuditorAware é usado para procurar o princípio atual que está executando a ação de auditoria. Por padrão, esse atributo está vazio, o que significa que o mecanismo padrão será usado para determinar o principal atual._
+- `auditorAwareRef`: _Este atributo permite configurar o nome do bean que implementa a ‘interface’ AuditorAware. Um AuditorAware é usado para procurar o princípio atual que executa a ação de auditoria. Por padrão, esse atributo está vazio, o que significa que o mecanismo padrão será usado para determinar o principal atual._
 - `setDates`: _Este atributo configura se as datas de criação e modificação devem ser definidas. Se for true, as datas de criação e modificação serão definidas automaticamente ao criar ou modificar entidades. Se for false, as datas não serão definidas automaticamente. O valor padrão é true._
 - `modifyOnCreate`: _Este atributo configura se a entidade deve ser marcada como modificada na criação. Se for true, a entidade será considerada modificada quando criada. Se for false, a entidade não será marcada como modificada na criação. O valor padrão é true._
-- `dateTimeProviderRef`: _Este atributo permite configurar o nome do bean que implementa a interface DateTimeProvider. Um DateTimeProvider é usado para personalizar o objeto TemporalAccessor usado para definir datas de criação e modificação. Se você não especificar um valor para este atributo, o mecanismo padrão será usado._
+- `dateTimeProviderRef`: _Este atributo permite configurar o nome do bean que implementa a ‘interface’ DateTimeProvider. Um DateTimeProvider é usado para personalizar o objeto TemporalAccessor usado para definir datas de criação e modificação. Se você não especificar um valor para este atributo, o mecanismo padrão será usado._
 
-${\color{yellow}@EnableJpaRepositories}$ : _@EnableJpaRepositories usada para habilitar a criação de repositórios JPA (Java Persistence API) em um aplicativo Spring. Esses repositórios são usados para acessar e manipular entidades de banco de dados comuns em aplicativos Spring Data._
+${\color{yellow}@EnableJpaRepositories}$ : _@EnableJpaRepositories usada para habilitar a criação de repositórios JPA (Java Persistence API) num aplicativo Spring. Esses repositórios são usados para acessar e manipular entidades de banco de dados comuns em aplicativos Spring Data._
 
 **Parâmetros:**
 
@@ -883,23 +883,23 @@ ${\color{yellow}@EnableJpaRepositories}$ : _@EnableJpaRepositories usada para ha
 - `repositoryImplementationPostfix`: _Usado para configurar o sufixo que será anexado ao nome do repositório ao procurar por implementações personalizadas de repositórios. Por padrão, o sufixo é definido como "Impl"._
 - `namedQueriesLocation`: _Usado para configurar a localização do arquivo de propriedades que contém as consultas nomeadas (named queries) para os repositórios. Por padrão, se esse atributo não for especificado, a localização padrão será META-INF/jpa-named-queries.properties._
 - `queryLookupStrategy`: _Usado para configurar o mecanismo de busca de estratégia de consulta para os métodos de consulta dos seus repositórios. Por padrão, se esse atributo não for especificado, a estratégia padrão é Key.CREATE_IF_NOT_FOUND._
-- `repositoryFactoryBeanClass`: _Usado para configurar a classe FactoryBean que será usada para criar instâncias de repositórios. Por padrão, se esse atributo não for especificado, a classe JpaRepositoryFactoryBean é usada como a classe de fábrica. Essa classe é responsável por criar proxies para os seus repositórios e gerenciar a injeção de dependência._
-- `repositoryBaseClass`: _Usado para configurar a classe base dos repositórios a serem criados para uma configuração específica. A classe base dos repositórios é a interface que estende a interface JpaRepository e é usada como base para criar instâncias de repositórios._
+- `repositoryFactoryBeanClass`: _Usado para configurar a classe FactoryBean que será usada para criar instâncias de repositórios. Por padrão, se esse atributo não for especificado, a classe JpaRepositoryFactoryBean é usada como a classe de fábrica. Essa classe é responsável por criar proxies para os seus repositórios e gerir a injeção de dependência._
+- `repositoryBaseClass`: _Usado para configurar a classe base dos repositórios a serem criados para uma configuração específica. A classe base dos repositórios é a ‘interface’ que estende a ‘interface’ JpaRepository sendo usada como base para criar instâncias de repositórios._
 - `entityManagerFactoryRef`: _Usado para configurar o nome da definição de bean do EntityManagerFactory que deve ser usado para criar os repositórios descobertos por meio dessa anotação. Por padrão, o nome da definição de bean do EntityManagerFactory é "entityManagerFactory"._
 - `transactionManagerRef`: _Usado para configurar o nome da definição de bean do PlatformTransactionManager que deve ser usado para criar os repositórios descobertos por meio dessa anotação. Por padrão, o nome da definição de bean do PlatformTransactionManager é "transactionManager"._
-- `considerNestedRepositories`: _Usado para configurar se as interfaces de repositório aninhadas (por exemplo, definidas como classes internas) devem ser descobertas pela infraestrutura de repositórios. Por padrão, essa configuração é definida como false, o que significa que as interfaces de repositório aninhadas não são consideradas na descoberta de repositórios._
+- `considerNestedRepositories`: _Usado para configurar se as interfaces de repositório aninhadas (por exemplo, definidas como classes internas) devem ser descobertas pela infraestrutura de repositórios. Por padrão, essa configuração é definida como false, o que significa que as ‘interfaces’ de repositório aninhadas não são consideradas na descoberta de repositórios._
 - `enableDefaultTransactions`: _ Usado para configurar se as transações padrão devem ser habilitadas para os repositórios Spring Data JPA. A configuração padrão é true, o que significa que as transações padrão estão habilitadas. Quando as transações padrão estão habilitadas, as operações realizadas nos métodos dos repositórios JPA são automaticamente envolvidas em transações gerenciadas pelo Spring, garantindo a consistência dos dados._
-- `bootstrapMode`: _Usado para configurar quando os repositórios são inicializados durante o ciclo de vida de inicialização do aplicativo. Isso é relevante ao usar o Spring Data JPA e a anotação @EnableEnversRepositories em uma configuração._
-- `escapeCharacter`: _Usado para configurar o caractere usado para escapar os caracteres curinga, como _ e %, em consultas derivadas no Spring Data JPA. Em consultas derivadas, você pode usar curingas para correspondência parcial de strings, mas, em alguns casos, você pode querer pesquisar literais que contêm esses caracteres curinga como parte da string em si._
+- `bootstrapMode`: _Usado para configurar quando os repositórios são inicializados durante o ciclo de vida de inicialização do aplicativo. Isso é relevante ao usar o Spring Data JPA e a anotação @EnableEnversRepositories numa configuração._
+- `escapeCharacter`: _Usado para configurar o caractere usado para escapar os caracteres curinga, como _ e %, em consultas derivadas no Spring Data JPA. Em consultas derivadas, você pode usar curingas para correspondência parcial de ‘strings’, mas, em alguns casos, você pode querer pesquisar literais que contêm esses caracteres curinga como parte da ‘string’ em si._
 
-${\color{yellow}@EntityGraph}$ : _@EntityGraph é usada para configurar os grafos de entidades (EntityGraphs) que devem ser usados em métodos de repositório JPA no Spring Data. Os grafos de entidades permitem definir quais atributos das entidades associadas devem ser carregados junto com a entidade principal, evitando problemas de carregamento preguiçoso (lazy loading) e melhorando o desempenho de consultas._
+${\color{yellow}@EntityGraph}$ : _@EntityGraph é usada para configurar os grafos de entidades (EntityGraphs) que devem ser usados em métodos de repositório JPA no Spring Data. Os grafos de entidades permitem definir quais atributos das entidades associadas devem ser carregados com a entidade principal, evitando problema de carregamento preguiçoso (lazy loading) e melhorando o desempenho de consultas._
 
 **Parâmetros:**
 
-- `type`: _Este atributo configura o tipo do EntityGraph a ser usado. O valor padrão é EntityGraphType.FETCH, que significa que os atributos listados no EntityGraph serão carregados como FetchType.EAGER. Outro valor disponível é EntityGraphType.LOAD, que trata atributos não listados como FetchType.EAGER e os demais de acordo com suas configurações padrão de FetchType._
-- `attributePaths`: _Este atributo permite personalizar o grafo de entidades definindo caminhos de atributos que devem ser carregados de forma ad-hoc. Se este atributo for especificado, o nome do EntityGraph (type()) será ignorado e o EntityGraph será considerado como dinâmico. Isso permite que você defina atributos específicos para carregamento em um método de repositório._
+- `type`: _Este atributo configura o tipo do EntityGraph a ser usado. O valor padrão é EntityGraphType.FETCH, que significa que os atributos listados no EntityGraph serão carregados como FetchType.EAGER. Outro valor disponível é EntityGraphType.LOAD, que trata atributos não listados como FetchType.EAGER e os demais conforme as suas configurações padrão de FetchType._
+- `attributePaths`: _Este atributo permite personalizar o grafo de entidades definindo caminhos de atributos que devem ser carregados de forma ad-hoc. Se este atributo for especificado, o nome do EntityGraph (type()) será ignorado e o EntityGraph será considerado dinâmico. Isso permite que você defina atributos específicos para carregamento num método de repositório._
 
-${\color{yellow}@Lock}$ : _@Lock é usada para especificar o tipo de bloqueio (LockModeType) a ser usado ao executar uma consulta ou método de CRUD em um repositório JPA no Spring Data. Os bloqueios são usados para controlar o acesso concorrente aos registros do banco de dados, permitindo que você defina como as transações devem travar os registros durante a execução da consulta._
+${\color{yellow}@Lock}$ : _@Lock é usada para especificar o tipo de bloqueio (LockModeType) a ser usado ao executar uma consulta ou método de CRUD num repositório JPA no Spring Data. Os bloqueios são usados para controlar o acesso concorrente aos registros do banco de dados, permitindo que você defina como as transações devem travar os registros durante a execução da consulta._
 
 **Parâmetros:**
 
@@ -921,21 +921,21 @@ ${\color{yellow}@Procedure}$ : _@Procedure é usada para declarar mapeamentos de
 
 **Parâmetros:**
 
-- `procedureName`: _Este atributo também especifica o nome do procedimento no banco de dados. O valor padrão é uma string vazia ("")._
-- `name`: _Especifica o nome do procedimento no EntityManager. O valor padrão é uma string vazia ("")._
-- `outputParameterName`: _Este atributo especifica o nome do parâmetro de saída do procedimento armazenado. O valor padrão é uma string vazia ("")._
+- `procedureName`: _Este atributo também especifica o nome do procedimento no banco de dados. O valor padrão é uma ‘string’ vazia ("")._
+- `name`: _Especifica o nome do procedimento no EntityManager. O valor padrão é uma ‘string’ vazia ("")._
+- `outputParameterName`: _Este atributo especifica o nome do parâmetro de saída do procedimento armazenado. O valor padrão é uma ‘string’ vazia ("")._
 - `refCursor`: _Especifica se o procedimento retorna um Ref Cursor do banco de dados. Um Ref Cursor é uma estrutura de dados que pode ser usada para percorrer conjuntos de resultados. O valor padrão é false._
 
 ${\color{yellow}@Query}$ : _@Query é usada para declarar consultas personalizadas diretamente em métodos de repositório. Isso permite definir as consultas JPA que serão executadas quando um método anotado com @Query for chamado._
 
 **Parâmetros:**
 
-- `value`: _Esse atributo define a consulta JPA a ser executada quando o método anotado é chamado. O valor padrão é uma string vazia ("")._
-- `countQuery`: _Esse atributo permite definir uma consulta especial de contagem que será usada para consultas de paginação a fim de obter o número total de elementos em uma página._
+- `value`: _Esse atributo define a consulta JPA a ser executada quando o método anotado é chamado. O valor padrão é uma ‘string’ vazia ("")._
+- `countQuery`: _Esse atributo permite definir uma consulta especial de contagem que será usada para consultas de paginação de modo a obter o número total de elementos numa página._
 - `countProjection`: _Este atributo define a parte de projeção da consulta de contagem gerada para consultas de paginação. Se nenhum countQuery() nem countProjection() estiver configurado, a consulta de contagem será derivada da consulta original._
 - `nativeQuery`: _Esse atributo configura se a consulta é uma consulta nativa (SQL) em vez de uma consulta JPQL. O valor padrão é false._
 - `name`: _Especifica o nome da consulta nomeada a ser usada. Se não for definido, uma @NamedQuery com o nome {$domainClass}.${queryMethodName} será usada._
-- `countName`: _Especifica o nome da consulta nomeada a ser usada para executar consultas de contagem ao usar a paginação. O padrão é derivar o nome da consulta da consulta nomeada configurada, seguido de `.count`._
+- `countName`: _Especifica o nome da consulta nomeada a ser usada para executar consultas de contagem ao usar a paginação. O padrão é derivar o nome da consulta nomeada configurada, seguido de `.count`._
 - `queryRewriter`: _Esse atributo permite definir um QueryRewriter que deve ser aplicado à string da consulta após a montagem completa da consulta. Isso é útil para modificar ou ajustar a consulta antes de ser executada._
 
 ${\color{yellow}@QueryHints}$ : _@QueryHints são dicas para otimizar a execução de consultas no JPA. A anotação @QueryHints permite que essas dicas sejam aplicadas a consultas definidas em métodos de repositório ou derivadas a partir do nome do método._
@@ -991,23 +991,23 @@ ${\color{yellow}@Payload}$ : _@Payload é usada para indicar que um parâmetro d
 
 **Parâmetros:**
 
-- `value`: _Permite que você especifique um nome ou valor para o atributo, que é útil quando o payload é simples e não requer uma expressão._
-- `expression`: _Permite que você especifique uma expressão Spring Expression Language (SpEL) que é usada para extrair o payload._
+- `value`: _Permite que você especifique um nome ou valor para o atributo, útil quando o payload é simples e não requer uma expressão._
+- `expression`: _Permite que você especifique uma expressão Spring Expression Language (SpEL) usada para extrair o payload._
 - `required`: _Especifica se o payload é obrigatório ou não. Se definido como true (o valor padrão), um erro será gerado se não houver payload na mensagem._
 
-${\color{yellow}@RSocketExchange}$ : _@RSocketExchange é usada para declarar um método em uma interface de serviço RSocket como um ponto de extremidade RSocket. Essa anotação permite especificar o roteamento do ponto de extremidade com base no atributo da anotação e nos argumentos do método._
+${\color{yellow}@RSocketExchange}$ : _@RSocketExchange é usada para declarar um método em uma ‘interface’ de serviço RSocket como um ponto de extremidade RSocket. Essa anotação permite especificar o roteamento do ponto de extremidade com base no atributo da anotação e nos argumentos do método._
 
 **Parâmetros:**
 
 - `value`: _Este atributo é usado para especificar o mapeamento de destino do ponto de extremidade._
 
-${\color{yellow}@SendTo}$ : _@SendTo é usada para indicar que o valor de retorno de um método deve ser convertido em uma mensagem (do tipo Message) se necessário e enviada para o destino especificado. Essa anotação é comumente usada em cenários de comunicação assíncrona, onde um método pode gerar uma resposta que é enviada para um destino específico._
+${\color{yellow}@SendTo}$ : _@SendTo é usada para indicar que o valor de retorno de um método deve ser convertido numa mensagem (do tipo Message) se necessário e enviada para o destino especificado. Essa anotação é comumente usada em cenários de comunicação assíncrona, onde um método pode gerar uma resposta que é enviada para um destino específico._
 
 **Parâmetros:**
 
 - `value`: _Especifica o destino para o qual a mensagem criada a partir do valor de retorno do método deve ser enviada._
 
-${\color{yellow}@SendToUser}$ : _@SendToUser é usada para indicar que o valor de retorno de um método deve ser convertido em uma mensagem (do tipo Message) e enviada para um ou mais destinos. A diferença principal entre @SendTo e @SendToUser é que a última adiciona um prefixo "/user/{username}" ao destino especificado. Além disso, @SendToUser é frequentemente usada em sistemas de mensagens onde as mensagens são direcionadas para usuários específicos._
+${\color{yellow}@SendToUser}$ : _@SendToUser é usada para indicar que o valor de retorno de um método deve ser convertido numa mensagem (do tipo Message) e enviada para um ou mais destinos. A diferença principal entre @SendTo e @SendToUser é que a última adiciona um prefixo "/user/{username}" ao destino especificado. Além disso, @SendToUser é frequentemente usada em sistemas de mensagens onde as mensagens são direcionadas para usuários específicos._
 
 **Parâmetros:**
 
@@ -1027,10 +1027,10 @@ ${\color{yellow}@ ActiveProfiles}$ : _@ActiveProfiles é usada para declarar qua
 **Parâmetros:**
 
 - `value / profiles`: _Ambos os atributos permitem especificar os perfis de definição de beans ativos a serem usados no contexto de aplicativo ao executar um teste._
-- `resolver`: _Permite que você especifique uma classe que implemente a interface ActiveProfilesResolver para resolver os perfis de definição de beans ativos programaticamente._
-- `inheritProfiles`: _O valor padrão é true, o que significa que os perfis definidos em uma classe de teste se acumulam com os perfis definidos nas classes de teste superiores._
+- `resolver`: _Permite que você especifique uma classe que implemente a ‘interface’ ActiveProfilesResolver para resolver os perfis de definição de beans ativos programaticamente._
+- `inheritProfiles`: _O valor padrão é true, o que significa que os perfis definidos numa classe de teste se acumulam com os perfis definidos nas classes de teste superiores._
 
-${\color{yellow}@ AfterTestClass}$ : _@AfterTestClass é usada para marcar métodos que devem ser invocados após a execução de uma classe de teste no Spring Framework._
+${\color{yellow}@ AfterTestClass}$ : _@AfterTestClass é usada para marcar métodos que devem ser invocados após a execução de uma classe de teste no Spring ‘Framework’._
 
 **Parâmetros:**
 
@@ -1048,9 +1048,9 @@ ${\color{yellow}@ AfterTestMethod}$ : _@AfterTestMethod é usada para marcar mé
 
 - `value`: _Expressão SpEL para que o método seja executado apenas se uma condição específica for atendida._
 
-${\color{yellow}@ AfterTransaction}$ : _@AfterTransaction usada em testes do Spring Framework para indicar que um método void anotado deve ser executado após o término de uma transação para um método de teste configurado para ser executado em uma transação, normalmente usando a anotação @Transactional do Spring._
+${\color{yellow}@ AfterTransaction}$ : _@AfterTransaction usada em testes do Spring ‘Framework’ para indicar que um método void anotado deve ser executado após o término de uma transação para um método de teste configurado para ser executado em uma transação, normalmente usando a anotação @Transactional do Spring._
 
-${\color{yellow}@BeforeTestClass}$ : _@BeforeTestClass é usada em testes do Spring Framework para indicar que um método void anotado deve ser executado antes que um conjunto de testes de classe seja executado._
+${\color{yellow}@BeforeTestClass}$ : _@BeforeTestClass é usada em testes do Spring ‘Framework’ para indicar que um método void anotado deve ser executado antes que um conjunto de testes de classe seja executado._
 
 **Parâmetros:**
 
@@ -1062,13 +1062,13 @@ ${\color{yellow}@BeforeTestExecution}$ : _@BeforeTestExecution é usada em teste
 
 - `value`: _Expressão SpEL para que o método seja executado apenas se uma condição específica for atendida._
 
-${\color{yellow}@BeforeTestMethod}$ : _@BeforeTestMethod é usada em testes do Spring Framework para indicar que um método void anotado deve ser executado antes da execução de um método de teste específico._
+${\color{yellow}@BeforeTestMethod}$ : _@BeforeTestMethod é usada em testes do Spring ‘Framework’ para indicar que um método void anotado deve ser executado antes da execução de um método de teste específico._
 
 **Parâmetros:**
 
 - `value`: _Expressão SpEL para que o método seja executado apenas se uma condição específica for atendida._
 
-${\color{yellow}@BeforeTransaction}$ : _@BeforeTransaction é usada em testes do Spring Framework para indicar que um método void anotado deve ser executado antes de uma transação ser iniciada para um método de teste configurado para ser executado dentro de uma transação, geralmente por meio da anotação @Transactional do Spring._
+${\color{yellow}@BeforeTransaction}$ : _@BeforeTransaction é usada em testes do Spring ‘Framework’ para indicar que um método void anotado deve ser executado antes de uma transação ser iniciada para um método de teste configurado para ser executado dentro de uma transação, geralmente por meio da anotação @Transactional do Spring._
 
 ${\color{yellow}@BootstrapWith}$ : _@BootstrapWith é usada para definir metadados em nível de classe que determinam como inicializar o "Spring TestContext Framework" durante a execução de testes._
 
@@ -1076,27 +1076,27 @@ ${\color{yellow}@BootstrapWith}$ : _@BootstrapWith é usada para definir metadad
 
 - `value`: _Permite que você especifique a classe que implementa o TestContextBootstrapper._
 
-${\color{yellow}@Commit}$ : _@Commit é usada para definir explicitamente que a transação deve ser confirmada após o término do método de teste. Normalmente, em um ambiente de teste, as transações são revertidas para garantir que os testes sejam independentes um do outro e não afetem o estado do banco de dados._
+${\color{yellow}@Commit}$ : _@Commit é usada para definir explicitamente que a transação deve ser confirmada após o término do método de teste. Normalmente, num ambiente de teste, as transações são revertidas para garantir que os testes sejam independentes um do outro e não afetem o estado do banco de dados._
 
-${\color{yellow}@ContextConfiguration}$ : _@ContextConfiguration é usada em testes de integração no Spring Framework para definir metadados a nível de classe que determinam como carregar e configurar um ApplicationContext para os testes._
+${\color{yellow}@ContextConfiguration}$ : _@ContextConfiguration é usada em testes de integração no Spring ‘Framework’ para definir metadados em nível de classe que determinam como carregar e configurar um ApplicationContext para os testes._
 
 **Parâmetros:**
 
 - `value / locations`: _Especifica as localizações dos recursos que serão usados para carregar o ApplicationContext._
 - `classes`: _Especifica classes de componentes que serão usadas para configurar o ApplicationContext._
-- `initializers`: _Permite especificar inicializadores do aplicativo, que são usados para personalizar a inicialização do ApplicationContext para testes._
+- `initializers`: _Permite especificar inicializadores do aplicativo, usados para personalizar a inicialização do ApplicationContext para testes._
 - `loader`: _Define o tipo de carregador de contexto a ser usado. O carregador de contexto determina como o ApplicationContext será criado._
 - `inheritLocations`: _Controla se as configurações de localização devem ser herdadas das classes pai. Se for definido como false, o teste substituirá as configurações das classes pai._
 - `inheritInitializers`: _Controla se as configurações de inicialização devem ser herdadas das classes pai. Se for definido como false, o teste substituirá as configurações das classes pai._
 - `name`: _Define o nome do nível de hierarquia de contexto. Isso é útil ao usar @ContextHierarchy para configurar hierarquias de contextos em classes de teste aninhadas._
 
-${\color{yellow}@ContextHierarchy}$ : _@ContextHierarchy é uma anotação de nível de classe que é usada para definir uma hierarquia de ApplicationContext para testes de integração no Spring Framework. Ela permite configurar vários níveis de contexto para testes complexos que envolvem diferentes partes de um aplicativo Spring._
+${\color{yellow}@ContextHierarchy}$ : _@ContextHierarchy é uma anotação de nível de classe usada para definir uma hierarquia de ApplicationContext para testes de integração no Spring Framework. Ela permite configurar vários níveis de contexto para testes complexos que envolvem diferentes partes de um aplicativo Spring._
 
 **Parâmetros:**
 
 - `value`: _Especifica uma lista de instâncias @ContextConfiguration._
 
-${\color{yellow}@DirtiesContext}$ : _@DirtiesContext é uma anotação usada em testes do Spring Framework para indicar que o ApplicationContext associado a um teste está "sujo" e, portanto, deve ser fechado e removido do cache de contexto. Ela é usada quando um teste modifica o contexto, como alterar o estado de um bean singleton, alterar o estado de um banco de dados incorporado, etc._
+${\color{yellow}@DirtiesContext}$ : _@DirtiesContext é uma anotação usada em testes do Spring ‘Framework’ para indicar que o ApplicationContext associado a um teste está "sujo" e, portanto, deve ser fechado e removido do cache de contexto. Ela é usada quando um teste modifica o contexto, como alterar o estado de um bean singleton, alterar o estado de um banco de dados incorporado, etc._
 
 **Parâmetros:**
 
@@ -1122,7 +1122,7 @@ ${\color{yellow}@EnabledIf}$ : _@EnabledIf é usada para indicar que a classe de
 - `reason`: _Define o motivo pelo qual o teste está desativado._
 - `loadContext`: _Define se o ApplicationContext associado ao teste deve ser carregado antecipadamente para avaliar a expression._
 
-${\color{yellow}@IfProfileValue}$ : _@IfProfileValue é usada com o framework de teste JUnit 4 para indicar se um teste está habilitado ou desabilitado com base em um perfil específico._
+${\color{yellow}@IfProfileValue}$ : _@IfProfileValue é usada com o ‘framework’ de teste JUnit 4 para indicar se um teste está habilitado ou desabilitado com base num perfil específico._
 
 **Parâmetros:**
 
@@ -1130,7 +1130,7 @@ ${\color{yellow}@IfProfileValue}$ : _@IfProfileValue é usada com o framework de
 - `value`: _Usado para definir um valor específico que o perfil deve ter para que o teste seja habilitado._
 - `values`: _Permite especificar uma lista de valores possíveis para o perfil. O teste será habilitado se o valor do perfil corresponder a qualquer um dos valores na lista._
 
-${\color{yellow}@NestedTestConfiguration}$ : _@NestedTestConfiguration é usada em conjunto com o Spring TestContext Framework para configurar como as anotações de configuração de teste do Spring são processadas em classes de teste aninhadas._
+${\color{yellow}@NestedTestConfiguration}$ : _@NestedTestConfiguration é usada em conjunto com o Spring TestContext ‘Framework’ para configurar como as anotações de configuração de teste do Spring são processadas em classes de teste aninhadas._
 
 **Parâmetros:**
 
@@ -1156,7 +1156,7 @@ ${\color{yellow}@Repeat}$ : _@Repeat é usada com o framework JUnit 4 para indic
 
 - `value`: _Número de repetições, por padrão o valir é 1._
 
-${\color{yellow}@Rollback}$ : _@Rollback é usada em testes no Spring Framework para indicar se uma transação gerenciada pelo teste deve ser revertida (rollback) após a conclusão do método de teste. Essa anotação é geralmente usada para controlar o comportamento das transações em testes de integração ou testes de unidade que envolvem transações de banco de dados._
+${\color{yellow}@Rollback}$ : _@Rollback é usada em testes no Spring ‘Framework’ para indicar se uma transação gerenciada pelo teste deve ser revertida (rollback) após a conclusão do método de teste. Essa anotação é geralmente usada para controlar o comportamento das transações em testes de integração ou testes de unidade que envolvem transações de banco de dados._
 
 **Parâmetros:**
 
@@ -1168,7 +1168,7 @@ ${\color{yellow}@SpringJUnitConfig}$ : _@SpringJUnitConfig é uma anotação com
 
 - `value / locations`: _Especifica as localizações dos recursos que serão usados para carregar o ApplicationContext._
 - `classes`: _Especifica classes de componentes que serão usadas para configurar o ApplicationContext._
-- `initializers`: _Permite especificar inicializadores do aplicativo, que são usados para personalizar a inicialização do ApplicationContext para testes._
+- `initializers`: _Permite especificar inicializadores do aplicativo, usados para personalizar a inicialização do ApplicationContext para testes._
 - `loader`: _Define o tipo de carregador de contexto a ser usado. O carregador de contexto determina como o ApplicationContext será criado._
 - `inheritLocations`: _Controla se as configurações de localização devem ser herdadas das classes pai. Se for definido como false, o teste substituirá as configurações das classes pai._
 - `inheritInitializers`: _Controla se as configurações de inicialização devem ser herdadas das classes pai. Se for definido como false, o teste substituirá as configurações das classes pai._
@@ -1180,12 +1180,12 @@ ${\color{yellow}@SpringJUnitWebConfig}$ : _@SpringJUnitWebConfig é uma anotaç�
 
 - `value / locations`: _Especifica as localizações dos recursos que serão usados para carregar o ApplicationContext._
 - `classes`: _Especifica classes de componentes que serão usadas para configurar o ApplicationContext._
-- `initializers`: _Permite especificar inicializadores do aplicativo, que são usados para personalizar a inicialização do ApplicationContext para testes._
+- `initializers`: _Permite especificar inicializadores do aplicativo, usados para personalizar a inicialização do ApplicationContext para testes._
 - `loader`: _Define o tipo de carregador de contexto a ser usado. O carregador de contexto determina como o ApplicationContext será criado._
 - `inheritLocations`: _Controla se as configurações de localização devem ser herdadas das classes pai. Se for definido como false, o teste substituirá as configurações das classes pai._
 - `inheritInitializers`: _Controla se as configurações de inicialização devem ser herdadas das classes pai. Se for definido como false, o teste substituirá as configurações das classes pai._
 - `name`: _Define o nome do nível de hierarquia de contexto. Isso é útil ao usar @ContextHierarchy para configurar hierarquias de contextos em classes de teste aninhadas._
-- `resourcePath`: _Permite que você configure o local onde o aplicativo da web deve ser procurado para os testes. Se você não fornecer um valor para resourcePath(), ele usará o valor padrão "src/main/webapp"._
+- `resourcePath`: _Permite que você configure o local onde o aplicativo da ‘web’ deve ser procurado para os testes. Se você não fornecer um valor para resourcePath(), ele usará o valor padrão "src/main/webapp"._
 
 - ${\color{yellow}@Sql}$ : _@Sql é usada para configurar scripts SQL a serem executados durante testes de integração._
 
@@ -1201,7 +1201,7 @@ ${\color{yellow}@SpringJUnitWebConfig}$ : _@SpringJUnitWebConfig é uma anotaç�
 **Parâmetros:**
 
 - `dataSource`: _Define o nome do bean do javax.sql.DataSource no qual os scripts SQL devem ser executados._
-- `transactionManager`: _Define o nome do bean do PlatformTransactionManager que deve ser usado para gerenciar as transações ao executar os scripts SQL._
+- `transactionManager`: _Define o nome do bean do PlatformTransactionManager que deve ser usado para gerir as transações ao executar os scripts SQL._
 - `transactionMode`: _Define o modo de transação a ser usado ao executar os scripts SQL. O padrão é TransactionMode.DEFAULT, que usa as regras de inferência para determinar o comportamento da transação. Pode ser configurado como TransactionMode.ISOLATED para executar os scripts em uma nova transação isolada que será imediatamente confirmada._
 - `encoding`: _Define a codificação a ser usada para os scripts SQL fornecidos, se diferir da codificação da plataforma._
 - `separator`: _Define o caractere ou sequência de caracteres que separa as instruções individuais nos scripts SQL. O padrão é ;, mas, se não estiver especificado, o mecanismo usará \n como último recurso._
@@ -1233,7 +1233,7 @@ ${\color{yellow}@TestExecutionListeners}$ : _@TestExecutionListeners é usada em
 
 **Parâmetros:**
 
-- `value / listeners`: _Permite que você forneça uma lista de classes que implementam a interface TestExecutionListener._
+- `value / listeners`: _Permite que você forneça uma lista de classes que implementam a ‘interface’ TestExecutionListener._
 - `mergeMode`: _Especifica como os ouvintes locais devem ser tratados em relação aos ouvintes padrão._
 - `inheritListeners`: _Define se a classe irá ou não ocultar e substituir efetivamente quaisquer ouvintes definidos por uma superclasse ou classe envolvente._
 
@@ -1262,7 +1262,7 @@ ${\color{yellow}@WebAppConfiguration}$ : _@WebAppConfiguration é uma anotação
 
 **Parâmetros:**
 
-- `value`: _Este atributo permite especificar o caminho para o diretório raiz da aplicação da web. O contexto da web é uma parte importante de muitas aplicações da ‘web’ Spring e é necessário para testar funcionalidades relacionadas à web._
+- `value`: _Este atributo permite especificar o caminho para o diretório raiz da aplicação da ‘web’. O contexto da ‘web’ é uma parte importante de muitas aplicações da ‘web’ Spring e é necessário para testar funcionalidades relacionadas à web._
 
 ## Spring-web
 
@@ -1326,11 +1326,11 @@ ${\color{yellow}@ExceptionHandler}$ : _@ExceptionHandler é uma anotação do Sp
 
 - `value / name`: _Define qual o tipo de exceção que o método de tratamento irá lidar._
 
-${\color{yellow}@ExceptionHandler}$ : _@ExceptionHandler é uma anotação do Spring ‘Framework’ usada para manipular exceções em classes ou métodos de controlador específicos. Essa anotação permite que você defina métodos de tratamento de exceção que serão acionados quando uma exceção específica for lançada durante a execução de uma solicitação. Os métodos anotados com @ExceptionHandler podem lidar com diferentes tipos de exceções e tomar medidas apropriadas, como retornar uma página de erro personalizada ou enviar uma resposta JSON._
+${\color{yellow}@GetExchange}$ : _@GetExchange usada para mapear métodos de manipulação de solicitações HTTP GET em um aplicativo Spring. Ela simplifica a configuração, especificando que um método é mapeado para solicitações HTTP GET._
 
 **Parâmetros:**
 
-- `value / name`: _Define qual o tipo de exceção que o método de tratamento irá lidar._
-
+- `value / url`: _Define o caminho da URL da solicitação GET a ser manipulada pelo método._
+- `accept`: _Permite que você defina os tipos de mídia que o método aceitará como resposta._
 
 :warning: **CONTINUA** :warning:
