@@ -1,3 +1,6 @@
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/devmorfeu/spring-annotations?color=yellow)](https://github.com/devmorfeu/spring-annotations/graphs/commit-activity)
+[![GitHub stars](https://img.shields.io/github/stars/devmorfeu/spring-annotations?color=yellow)](https://github.com/devmorfeu/spring-annotations/stargazers)
+
 # Anotações do Framework Spring
 
 _Este documento descreve várias anotações disponíveis no Spring Framework, organizadas por módulos em ordem alfabética._
@@ -1200,7 +1203,7 @@ ${\color{yellow}@SpringJUnitWebConfig}$ : _@SpringJUnitWebConfig é uma anotaç�
 - `dataSource`: _Define o nome do bean do javax.sql.DataSource no qual os scripts SQL devem ser executados._
 - `transactionManager`: _Define o nome do bean do PlatformTransactionManager que deve ser usado para gerenciar as transações ao executar os scripts SQL._
 - `transactionMode`: _Define o modo de transação a ser usado ao executar os scripts SQL. O padrão é TransactionMode.DEFAULT, que usa as regras de inferência para determinar o comportamento da transação. Pode ser configurado como TransactionMode.ISOLATED para executar os scripts em uma nova transação isolada que será imediatamente confirmada._
-- `encoding`: _Define a codificação a ser usada para os scripts SQL fornecidos, se for diferente da codificação da plataforma._
+- `encoding`: _Define a codificação a ser usada para os scripts SQL fornecidos, se diferir da codificação da plataforma._
 - `separator`: _Define o caractere ou sequência de caracteres que separa as instruções individuais nos scripts SQL. O padrão é ;, mas, se não estiver especificado, o mecanismo usará \n como último recurso._
 - `commentPrefix`: _Define o prefixo que identifica comentários de uma linha nos scripts SQL. O valor padrão é --._
 - `commentPrefixes`: _Uma alternativa ao commentPrefix, esse atributo permite definir uma matriz de prefixos que identificam comentários de uma linha. O valor padrão é ["--"]._
@@ -1234,7 +1237,7 @@ ${\color{yellow}@TestExecutionListeners}$ : _@TestExecutionListeners é usada em
 - `mergeMode`: _Especifica como os ouvintes locais devem ser tratados em relação aos ouvintes padrão._
 - `inheritListeners`: _Define se a classe irá ou não ocultar e substituir efetivamente quaisquer ouvintes definidos por uma superclasse ou classe envolvente._
 
-${\color{yellow}@TestPropertySource}$ : _@TestPropertySource é usada em testes de integração no contexto do Spring Framework para configurar a carga de propriedades a serem adicionadas ao ambiente (Environment) do aplicativo durante a execução dos testes._
+${\color{yellow}@TestPropertySource}$ : _@TestPropertySource é usada em testes de integração no contexto do Spring ‘Framework’ para configurar a carga de propriedades a serem adicionadas ao ambiente (Environment) do aplicativo durante a execução dos testes._
 
 **Parâmetros:**
 
@@ -1243,24 +1246,91 @@ ${\color{yellow}@TestPropertySource}$ : _@TestPropertySource é usada em testes 
 - `properties`: _Permite definir propriedades in-line como pares chave-valor para serem adicionados ao ambiente de teste antes da inicialização do contexto do aplicativo._
 - `inheritProperties`: _Define se as propriedades in-line definidas em superclasses ou classes contendo essa anotação devem ser herdadas._
 
-${\color{yellow}@TestPropertySources}$ : _@TestPropertySources é um container para uma ou mais declarações de @TestPropertySource. Seu propósito é agrupar várias fontes de propriedades em um único lugar._
+${\color{yellow}@TestPropertySources}$ : _@TestPropertySources é um container para uma ou mais declarações de @TestPropertySource. O seu propósito é agrupar várias fontes de propriedades em um único lugar._
 
 **Parâmetros:**
 
 - `value`: _Este atributo permite especificar uma matriz de uma ou mais declarações de @TestPropertySource._
 
-${\color{yellow}@Timed}$ : _@Timed é uma anotação de teste que pode ser usada com o framework JUnit 4 para indicar que um método de teste deve ser concluído dentro de um período de tempo especificado._
+${\color{yellow}@Timed}$ : _@Timed é uma anotação de teste que pode ser usada com o ‘framework’ JUnit 4 para indicar que um método de teste deve ser concluído num período especificado._
 
 **Parâmetros:**
 
-- `millis`: _Define o período de tempo máximo (em milissegundos) que a execução do teste pode levar antes de ser marcada como falha devido a um tempo limite excedido._
+- `millis`: _Define o período máximo (em milissegundos) que a execução do teste pode levar antes de ser marcada como falha devido a um tempo limite excedido._
 
 ${\color{yellow}@WebAppConfiguration}$ : _@WebAppConfiguration é uma anotação de nível de classe usada para declarar que o ApplicationContext carregado para um teste de integração deve ser um WebApplicationContext._
 
 **Parâmetros:**
 
-- `value`: _Este atributo permite especificar o caminho para o diretório raiz da aplicação da web. O contexto da web é uma parte importante de muitas aplicações da web Spring e é necessário para testar funcionalidades relacionadas à web._
+- `value`: _Este atributo permite especificar o caminho para o diretório raiz da aplicação da web. O contexto da web é uma parte importante de muitas aplicações da ‘web’ Spring e é necessário para testar funcionalidades relacionadas à web._
 
 ## Spring-web
 
-:warning: **EM BREVE** :warning:
+${\color{yellow}@ ApplicationScope}$ : _@ApplicationScope é usada para definir o escopo de um componente como "application", o que significa que o componente terá uma única instância por aplicação da ‘web’._
+
+**Parâmetros:**
+
+- `proxyMode`: _Especifica o modo de proxy a ser usado para o escopo. O modo de proxy determina como os componentes gerenciados pelo Spring ‘Framework’ se comportam em relação à criação de proxies para o componente._
+
+${\color{yellow}@ControllerAdvice}$ : _@ControllerAdvice é usada em Spring Framework para declarar classes que atuam como conselheiros (advisors) para controladores (controllers). Essas classes podem conter métodos anotados com @ExceptionHandler, @InitBinder, ou @ModelAttribute para serem compartilhados entre vários controladores._
+
+**Parâmetros:**
+
+- `value / basePackages`: _Permite especificar um ou mais pacotes de onde os controladores serão selecionados para serem aconselhados pela classe anotada com @ControllerAdvice._
+- `basePackageClasses`: _Alternativa ("Type-safe") especificando os pacotes para verificar as propriedades de configuração. O pacote de cada classe especificada será verificado._
+- `assignableTypes`: _Pode fornecer uma ou mais classes para esta propriedade. Controladores que sejam atribuíveis a pelo menos uma das classes fornecidas serão aconselhados pela classe anotada com @ControllerAdvice._
+- `annotations`: _Permite especificar uma ou mais anotações._
+
+${\color{yellow}@CookieValue}$ : _@CookieValue é usada em Spring ‘Framework’ para indicar que um parâmetro de método está vinculado a um ‘cookie’ HTTP. Essa anotação é frequentemente usada em métodos de controladores que lidam com solicitações da ‘web’ para acessar valores de ‘cookies’ enviados pelos clientes._
+
+**Parâmetros:**
+
+- `value / name`: _Permite especificar o nome do cookie ao qual o parâmetro do método deve ser vinculado._
+- `required`: _Determina se o ‘cookie’ é obrigatório ou opcional._
+- `defaultValue`: _Esta propriedade permite fornecer um valor padrão para o caso em que o ‘cookie’ não está presente na solicitação._
+
+${\color{yellow}@CrossOrigin}$ : _@CrossOrigin é usada para permitir solicitações de origens cruzadas (CORS) em classes de controladores específicas e/ou métodos de controladores no contexto do Spring ‘Framework’. O CORS é um mecanismo de segurança que permite ou restringe solicitações de recursos da ‘web’ de um domínio diferente do domínio da página que faz a solicitação._
+
+**Parâmetros:**
+
+- `value / origins`: _Permite especificar uma lista de origens a partir das quais as solicitações CORS serão permitidas._
+- `originPatterns`: _Alternativa para a propriedade origins que suporta padrões de origem mais flexíveis. Isso é útil quando você deseja permitir solicitações de várias origens com padrões comuns._
+- `allowedHeaders`: _Permite especificar uma lista de cabeçalhos de solicitação permitidos em solicitações reais. Você pode definir essa lista ou usar * para permitir todos os cabeçalhos._
+- `exposedHeaders`: _Pode listar os cabeçalhos que o navegador deve permitir que o cliente acesse na resposta real. Por padrão, nenhum cabeçalho é listado como exposto._
+- `methods`: _Permite especificar uma lista de métodos HTTP suportados para as solicitações CORS. Por padrão, os métodos suportados são os mesmos que os métodos mapeados para o método do controlador._
+- `allowCredentials`: _Controla se o navegador deve enviar credenciais (como ‘cookies’) com as solicitações CORS. Use essa propriedade com cuidado, pois permitir credenciais pode aumentar o risco de ataques. Por padrão, as credenciais não são permitidas._
+- `maxAge`: _Controla a duração em segundos em que os navegadores devem armazenar em cache as respostas preflight (solicitações de opções). Definir um valor razoável pode reduzir o número de interações preflight entre o navegador e o servidor. O valor padrão é de 30 minutos (1800 segundos)._
+
+${\color{yellow}@DeleteExchange}$ : _@DeleteExchange é uma anotação de atalho que simplifica a criação de um ponto de extremidade HTTP para requisições DELETE numa API ou aplicação ‘web’. Ela é usada para marcar métodos que devem ser acionados quando uma solicitação HTTP DELETE é feita para um recurso específico. Essa anotação é uma extensão do Spring Framework, introduzida na versão 6.0, e é útil para simplificar a configuração de controladores e métodos que lidam com requisições DELETE._
+
+**Parâmetros:**
+
+- `value / url`: _Permite especificar o URL do ponto de extremidade do recurso, que é o mesmo que a propriedade value._
+- `contentType`: _Permite especificar o tipo de mídia do conteúdo da solicitação DELETE, se aplicável._
+- `accept`: _Permite especificar os tipos de mídia que o servidor aceita como resposta à solicitação DELETE. Isso pode ser útil para negociar o tipo de resposta desejado._
+
+${\color{yellow}@DeleteMapping}$ : _@DeleteMapping é uma anotação do Spring ‘Framework’ usada para mapear solicitações HTTP DELETE em métodos de controlador específicos. Essa anotação é uma forma concisa de definir um método de controlador que lida com solicitações DELETE para um recurso específico em uma aplicação web. A anotação @DeleteMapping é uma das anotações de mapeamento HTTP que simplifica a configuração do roteamento em aplicativos Spring MVC._
+
+**Parâmetros:**
+
+- `value / name`: _É usado para especificar o URI do ponto de extremidade do recurso que deve corresponder à solicitação DELETE. O URI é uma ‘string’ que define o caminho relativo a partir do contexto da ‘web’._
+- `path`: _Também é usado para especificar o URI do ponto de extremidade do recurso._
+- `params`: _Permite especificar parâmetros de solicitação que devem estar presentes para que o método seja acionado._
+- `headers`: _Permite especificar cabeçalhos de solicitação que devem estar presentes para que o método seja acionado._
+- `consumes`: _Define os tipos de mídia que o método é capaz de consumir._
+- `produces`: _Define os tipos de mídia dos quais o método consegue produzir saídas._
+
+${\color{yellow}@ExceptionHandler}$ : _@ExceptionHandler é uma anotação do Spring ‘Framework’ usada para manipular exceções em classes ou métodos de controlador específicos. Essa anotação permite que você defina métodos de tratamento de exceção que serão acionados quando uma exceção específica for lançada durante a execução de uma solicitação. Os métodos anotados com @ExceptionHandler podem lidar com diferentes tipos de exceções e tomar medidas apropriadas, como retornar uma página de erro personalizada ou enviar uma resposta JSON._
+
+**Parâmetros:**
+
+- `value / name`: _Define qual o tipo de exceção que o método de tratamento irá lidar._
+
+${\color{yellow}@ExceptionHandler}$ : _@ExceptionHandler é uma anotação do Spring ‘Framework’ usada para manipular exceções em classes ou métodos de controlador específicos. Essa anotação permite que você defina métodos de tratamento de exceção que serão acionados quando uma exceção específica for lançada durante a execução de uma solicitação. Os métodos anotados com @ExceptionHandler podem lidar com diferentes tipos de exceções e tomar medidas apropriadas, como retornar uma página de erro personalizada ou enviar uma resposta JSON._
+
+**Parâmetros:**
+
+- `value / name`: _Define qual o tipo de exceção que o método de tratamento irá lidar._
+
+
+:warning: **CONTINUA** :warning:
